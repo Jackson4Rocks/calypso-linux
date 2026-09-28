@@ -116,11 +116,10 @@ hl.bind(main_mod .. " + F", hl.dsp.window.fullscreen({ action = "toggle" }), { d
 hl.bind(main_mod .. " + SHIFT + SPACE", hl.dsp.window.float({ action = "toggle" }), { description = "Toggle floating" })
 hl.bind(main_mod .. " + P", hl.dsp.window.pseudo({ action = "toggle" }), { description = "Toggle pseudotile" })
 
--- Right mouse button + drag moves the active window.
--- A normal RMB click is left alone; the drag threshold prevents accidental moves.
-hl.bind("mouse:273", hl.dsp.window.drag(), {
+-- SUPER + left mouse button + drag moves the active window.
+-- The drag threshold keeps a normal click from becoming a move.
+hl.bind("SUPER + mouse:272", hl.dsp.window.drag(), {
   mouse = true,
-  drag = true,
 })
 
 -- Focus and movement.
