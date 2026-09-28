@@ -65,6 +65,10 @@ hl.config({
   xwayland = {
     force_zero_scaling = false,
   },
+
+  binds = {
+    drag_threshold = 10,
+  },
 })
 
 hl.env("XCURSOR_SIZE", "24")
@@ -104,12 +108,20 @@ end
 -- Use Hyprland's native graceful close dispatcher here. The current Hyprland
 -- Lua API exposes this as hl.dsp.window.close(), which sends a normal close
 -- request to the active client rather than killing its process.
-hl.bind(main_mod .. " + RETURN", exec(terminal), { description = "Open terminal" })
-hl.bind(main_mod .. " + E", exec(file_manager), { description = "Open file manager" })
+hl.bind(main_mod .. " + RETURN", hl.dsp.exec_cmd(terminal), { description = "Open terminal" })
+hl.bind(main_mod .. " + B", hl.dsp.exec_cmd("firefox"), { description = "Open Firefox" })
+hl.bind(main_mod .. " + E", hl.dsp.exec_cmd(file_manager), { description = "Open file manager" })
 hl.bind(main_mod .. " + Q", hl.dsp.window.close(), { description = "Close active window" })
 hl.bind(main_mod .. " + F", hl.dsp.window.fullscreen({ action = "toggle" }), { description = "Toggle fullscreen" })
 hl.bind(main_mod .. " + SHIFT + SPACE", hl.dsp.window.float({ action = "toggle" }), { description = "Toggle floating" })
 hl.bind(main_mod .. " + P", hl.dsp.window.pseudo({ action = "toggle" }), { description = "Toggle pseudotile" })
+
+-- Right mouse button + drag moves the active window.
+-- A normal RMB click is left alone; the drag threshold prevents accidental moves.
+hl.bind("mouse:273", hl.dsp.window.drag(), {
+  mouse = true,
+  drag = true,
+})
 
 -- Focus and movement.
 hl.bind(main_mod .. " + LEFT", hl.dsp.focus({ direction = "l" }), { description = "Focus left" })
