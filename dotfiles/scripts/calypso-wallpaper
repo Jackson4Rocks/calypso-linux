@@ -1,34 +1,19 @@
-#!/bin/bash
+#!/usr/bin/env bash
 set -euo pipefail
 
-WALL="${1:-}"
-
-if [[ -z "$WALL" ]]; then
-  WALL="$(find "$HOME/Pictures/wallpapers" -type f \( -iname '*.png' -o -iname '*.jpg' -o -iname '*.jpeg' -o -iname '*.webp' \) 2>/dev/null | fuzzel --dmenu --prompt='Wallpaper > ' | head -n1 || true)"
-fi
-
-if [[ -z "$WALL" ]]; then
-  echo "No wallpaper selected."
-  exit 0
-fi
+DEFAULT="$HOME/.local/share/calypso/CALYPSO-wallpaper.webp"
+WALL="${1:-$DEFAULT}"
 
 if [[ ! -f "$WALL" ]]; then
-  echo "Wallpaper not found: $WALL" >&2
+  printf 'Wallpaper not found: %s\n' "$WALL" >&2
+  printf 'Usage: calypso-wallpaper /path/to/image\n' >&2
   exit 1
 fi
 
-mkdir -p "$HOME/.config/quickshell/aurora" "$HOME/.config/kitty" "$HOME/.config/fuzzel"
+command -v dms >/dev/null 2>&1 || {
+  printf 'DankMaterialShell is not installed or not on PATH.\n' >&2
+  exit 1
+}
 
-if command -v matugen >/dev/null 2>&1; then
-  matugen image "$WALL" -m dark
-fi
-
-if command -v hyprpaper >/dev/null 2>&1; then
-  hyprpaper preload "$WALL" >/dev/null 2>&1 || true
-  while IFS= read -r monitor; do
-    [[ -n "$monitor" ]] || continue
-    hyprpaper wallpaper "$monitor,$WALL,cover" >/dev/null 2>&1 || true
-  done < <(hyprctl monitors -j 2>/dev/null | jq -r '.[].name' 2>/dev/null || true)
-fi
-
+dms ipc call wallpaper set "$WALL"
 printf 'Calypso wallpaper set: %s\n' "$WALL"
