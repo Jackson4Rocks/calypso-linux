@@ -3,658 +3,658 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="theme-color" content="#06100b">
-<meta name="description" content="Calypso Linux — a fast, lean Arch-based Linux distribution centered on KDE Plasma, with Hyprland available for a different workflow.">
+<meta name="theme-color" content="#061109">
+<meta name="description" content="Calypso Linux — a fast, lean Arch-based Linux distribution with a pixel-forward identity, KDE Plasma at the center, and a future Hyprland direction.">
 <meta name="robots" content="index,follow,max-image-preview:large">
 <meta name="author" content="Leon Sony">
 <meta name="application-name" content="Calypso Linux">
 <link rel="canonical" href="https://jackson4rocks.github.io/calypso-linux/">
-<link rel="icon" type="image/svg+xml" href="./assets/calypso-mark.svg?v=12">
-<link rel="shortcut icon" type="image/svg+xml" href="./assets/calypso-mark.svg?v=12">
-<link rel="apple-touch-icon" sizes="512x512" href="./assets/calypso-mark.png?v=10">
+<link rel="icon" type="image/svg+xml" href="./assets/calypso-mark.svg?v=13">
+<link rel="shortcut icon" type="image/svg+xml" href="./assets/calypso-mark.svg?v=13">
+<link rel="apple-touch-icon" sizes="512x512" href="./assets/calypso-mark.png?v=11">
 <link rel="manifest" href="./site.webmanifest">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Calypso Linux">
 <meta property="og:title" content="Calypso Linux — Designed for Greatness">
-<meta property="og:description" content="A pixel-forward Material You inspired Arch-based Linux experience.">
+<meta property="og:description" content="A pixel-forward Arch-based Linux experience.">
 <meta property="og:url" content="https://jackson4rocks.github.io/calypso-linux/">
-<meta property="og:image" content="https://jackson4rocks.github.io/calypso-linux/assets/calypso-mark.png?v=10">
+<meta property="og:image" content="https://jackson4rocks.github.io/calypso-linux/assets/calypso-mark.png?v=11">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Calypso Linux — Designed for Greatness">
 <meta name="twitter:description" content="Fast. Lean. Yours.">
-<meta name="twitter:image" content="https://jackson4rocks.github.io/calypso-linux/assets/calypso-mark.png?v=10">
-<link rel="preload" as="image" href="./assets/calypso-hero.webp" fetchpriority="high">
+<meta name="twitter:image" content="https://jackson4rocks.github.io/calypso-linux/assets/calypso-mark.png?v=11">
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400;500;600;700&family=Roboto+Flex:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400;500;600;700&family=Press+Start+2P&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
 <title>Calypso Linux — Designed for Greatness</title>
 
 <style>
 :root{
-  --md-primary:#8ff5c7;
-  --md-on-primary:#003827;
-  --md-primary-container:#00583e;
-  --md-on-primary-container:#a8ffd8;
-  --md-secondary:#b6ccbF;
-  --md-on-secondary:#20342b;
-  --md-tertiary:#a8cfda;
-  --md-on-tertiary:#07343d;
-  --md-background:#06100b;
-  --md-on-background:#e2eee7;
-  --md-surface:#07130d;
-  --md-surface-1:#0a1710;
-  --md-surface-2:#0e1d16;
-  --md-surface-3:#12241c;
-  --md-surface-4:#182c23;
-  --md-outline:#3a5147;
-  --md-outline-variant:#263a31;
-  --md-error:#ffb4ab;
-  --pixel:#a4ffdb;
-  --pixel-2:#38df9e;
-  --ink:#e9f7ef;
-  --muted:#9bb1a7;
-  --dim:#647c71;
-  --shadow:0 24px 70px rgba(0,0,0,.36);
-  --radius-xl:32px;
-  --radius-lg:24px;
-  --radius-md:18px;
-  --max:1320px;
-  --sans:"Roboto Flex",system-ui,-apple-system,"Segoe UI",sans-serif;
-  --pixel-font:"Pixelify Sans",system-ui,sans-serif;
-  --mono:"Space Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
+  --bg:#050b07;
+  --bg2:#08130c;
+  --panel:#0a1910;
+  --panel2:#0d2217;
+  --panel3:#112b1e;
+  --line:#214f3a;
+  --line2:#2e7654;
+  --mint:#9fffd5;
+  --green:#3be39f;
+  --green2:#1ea66e;
+  --text:#e8fff2;
+  --muted:#8aa497;
+  --dim:#527062;
+  --red:#ff927f;
+  --yellow:#e6df8c;
+  --max:1280px;
+  --pixel:"Press Start 2P",monospace;
+  --ui:"Pixelify Sans",system-ui,sans-serif;
+  --mono:"Space Mono",ui-monospace,monospace;
 }
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{
   margin:0;
-  color:var(--md-on-background);
-  font-family:var(--sans);
-  line-height:1.55;
+  color:var(--text);
   background:
-    radial-gradient(900px 650px at 75% -5%,rgba(56,223,158,.12),transparent 65%),
-    radial-gradient(700px 520px at 5% 48%,rgba(90,180,147,.06),transparent 68%),
-    var(--md-background);
+    radial-gradient(circle at 50% -10%,rgba(59,227,159,.10),transparent 38%),
+    linear-gradient(#040a06,#061109 55%,#030704);
+  font-family:var(--ui);
   overflow-x:hidden;
-  -webkit-font-smoothing:antialiased;
+  image-rendering:auto;
 }
 body:before{
   content:"";
-  position:fixed;inset:0;z-index:80;pointer-events:none;opacity:.10;
-  background-image:
-    linear-gradient(rgba(164,255,219,.025) 1px,transparent 1px),
-    linear-gradient(90deg,rgba(164,255,219,.025) 1px,transparent 1px);
-  background-size:24px 24px;
-  mask-image:linear-gradient(180deg,#000,transparent 90%);
+  position:fixed;inset:0;pointer-events:none;z-index:90;opacity:.10;
+  background:
+    repeating-linear-gradient(0deg,rgba(255,255,255,.018) 0 1px,transparent 1px 4px),
+    repeating-linear-gradient(90deg,rgba(159,255,213,.012) 0 1px,transparent 1px 6px);
 }
 body:after{
-  content:"";position:fixed;inset:0;z-index:81;pointer-events:none;opacity:.022;
-  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='96' height='96' viewBox='0 0 96 96'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.42'/%3E%3C/svg%3E");
+  content:"";
+  position:fixed;inset:0;pointer-events:none;z-index:91;opacity:.06;
+  background-image:
+    linear-gradient(90deg,transparent 0 95%,rgba(159,255,213,.12) 95% 96%,transparent 96%),
+    linear-gradient(0deg,transparent 0 95%,rgba(159,255,213,.12) 95% 96%,transparent 96%);
+  background-size:32px 32px;
+  mask-image:linear-gradient(180deg,#000,transparent 92%);
 }
-::selection{background:rgba(143,245,199,.28);color:#fff}
+::selection{background:var(--mint);color:#02140b}
 a{color:inherit;text-decoration:none}
 button{font:inherit}
 img,svg{display:block}
-.page{width:min(var(--max),calc(100% - 24px));margin:12px auto 20px;border:1px solid var(--md-outline-variant);border-radius:36px;overflow:hidden;background:rgba(5,13,9,.86);box-shadow:var(--shadow)}
-.container{width:min(100%,1180px);margin:0 auto;padding-inline:24px}
-.section{position:relative;padding:112px 24px 0;scroll-margin-top:96px}
-.section:last-of-type{padding-bottom:92px}
-.section-head{display:grid;grid-template-columns:1fr .82fr;gap:52px;align-items:end;margin-bottom:30px}
-.kicker{font:700 10px/1 var(--mono);letter-spacing:.18em;text-transform:uppercase;color:var(--md-primary)}
-.section-title{margin:12px 0 0;font:600 clamp(48px,6vw,84px)/.92 var(--pixel-font);letter-spacing:-.045em;color:var(--ink)}
-.section-title em{font-style:normal;color:var(--md-primary)}
-.section-copy{margin:0 0 3px;color:var(--muted);font-size:14px;line-height:1.8}
-.surface{
-  border:1px solid var(--md-outline-variant);
-  background:linear-gradient(160deg,rgba(18,36,28,.82),rgba(7,17,12,.94));
-  box-shadow:inset 0 1px rgba(255,255,255,.025),0 18px 58px rgba(0,0,0,.18);
+.page{
+  width:min(var(--max),calc(100% - 26px));
+  margin:12px auto;
+  background:var(--bg);
+  border:3px solid #173a2b;
+  box-shadow:
+    0 0 0 1px #020604,
+    12px 12px 0 rgba(0,0,0,.18),
+    0 35px 100px rgba(0,0,0,.45);
 }
-.material-shape{border-radius:var(--radius-lg)}
 .pixel-corners{
   clip-path:polygon(
-    0 14px,14px 14px,14px 0,calc(100% - 14px) 0,calc(100% - 14px) 14px,100% 14px,
-    100% calc(100% - 14px),calc(100% - 14px) calc(100% - 14px),calc(100% - 14px) 100%,14px 100%,14px calc(100% - 14px),0 calc(100% - 14px)
+    0 8px,8px 8px,8px 0,calc(100% - 8px) 0,calc(100% - 8px) 8px,100% 8px,
+    100% calc(100% - 8px),calc(100% - 8px) calc(100% - 8px),calc(100% - 8px) 100%,8px 100%,8px calc(100% - 8px),0 calc(100% - 8px)
   );
 }
-.topbar{
-  position:sticky;top:0;z-index:50;
-  min-height:78px;
-  display:flex;align-items:center;justify-content:space-between;gap:16px;
-  padding:0 20px;
-  background:rgba(6,16,11,.84);
-  border-bottom:1px solid var(--md-outline-variant);
-  backdrop-filter:blur(22px) saturate(1.25);
+.header{
+  position:sticky;top:0;z-index:60;
+  min-height:74px;
+  display:grid;
+  grid-template-columns:1fr auto 1fr;
+  align-items:center;
+  gap:18px;
+  padding:0 18px;
+  background:#07120c;
+  border-bottom:3px solid #183f2e;
 }
-.brand{display:flex;align-items:center;gap:11px}
-.brand-mark{width:46px;height:46px;padding:7px;border-radius:15px;border:1px solid var(--md-outline);background:var(--md-surface-2)}
-.brand-text{display:block;font:600 18px/1 var(--pixel-font);letter-spacing:.03em}
-.brand-sub{display:block;margin-top:4px;color:var(--md-primary);font:700 7px/1 var(--mono);letter-spacing:.18em;text-transform:uppercase}
-.nav{display:flex;align-items:center;gap:5px}
-.nav a,.nav button{
-  min-height:40px;padding:0 13px;border:1px solid transparent;border-radius:999px;
-  display:inline-flex;align-items:center;justify-content:center;
-  color:#aac0b5;background:transparent;
-  font:500 10px/1 var(--mono);letter-spacing:.04em;
-  cursor:pointer;transition:.2s ease;
+.brand{display:flex;align-items:center;gap:10px;min-width:0}
+.brand img{width:44px;height:44px;padding:6px;border:2px solid #286348;background:#08160f;image-rendering:auto}
+.brand-name{display:block;font:700 15px/1 var(--pixel);white-space:nowrap}
+.brand-sub{display:block;margin-top:5px;color:var(--mint);font:700 7px/1 var(--mono);letter-spacing:.16em}
+.nav{display:flex;align-items:center;gap:4px;justify-content:center}
+.nav a{
+  padding:10px 12px;
+  color:#86a294;
+  border:2px solid transparent;
+  font:700 9px/1 var(--mono);
+  text-transform:uppercase;
+  transition:.16s step-end;
 }
-.nav a:hover,.nav button:hover{color:var(--ink);background:rgba(143,245,199,.06);border-color:var(--md-outline-variant)}
-.nav .download{
-  color:var(--md-on-primary);background:var(--md-primary);border-color:transparent;
-  padding-inline:17px;font-weight:700;box-shadow:0 8px 25px rgba(56,223,158,.13);
-}
-.nav .download:hover{background:#b3ffdf;transform:translateY(-2px)}
-.menu-btn{display:none;width:42px;height:42px;border-radius:50%;border:1px solid var(--md-outline-variant);background:var(--md-surface-2);color:var(--md-on-background);cursor:pointer;place-items:center}
-.mobile-nav{display:none;padding:10px 14px;border-bottom:1px solid var(--md-outline-variant);background:rgba(5,13,9,.97)}
+.nav a:hover{color:var(--text);background:var(--panel2);border-color:#234f3a}
+.nav .download{color:#03150d;background:var(--mint);border-color:var(--mint);box-shadow:4px 4px 0 #0e5639}
+.nav .download:hover{transform:translate(-2px,-2px);box-shadow:6px 6px 0 #0e5639}
+.header-side{justify-self:end;display:flex;align-items:center;gap:8px;color:#597366;font:700 8px/1 var(--mono);text-transform:uppercase}
+.header-side i{width:8px;height:8px;background:var(--green);box-shadow:0 0 14px rgba(59,227,159,.85);animation:blink 1.5s steps(2) infinite}
+.menu{display:none;width:40px;height:40px;place-items:center;border:2px solid #214f3a;background:var(--panel);color:var(--mint)}
+.mobile-nav{display:none;border-bottom:3px solid #183f2e;background:#07110b;padding:8px}
 .mobile-nav.open{display:grid}
-.mobile-nav a{padding:14px;border-radius:14px;color:#c0d0c8;font:500 10px/1 var(--mono);letter-spacing:.06em}
-.mobile-nav a:hover{background:var(--md-surface-3)}
+.mobile-nav a{padding:12px;border:2px solid #173c2b;color:#91a99d;font:700 9px/1 var(--mono)}
 
-.hero{position:relative;min-height:790px;overflow:hidden;display:grid;place-items:center}
-.hero-art{position:absolute;inset:0;background:
-  linear-gradient(180deg,rgba(1,5,3,.26),rgba(2,7,4,.82)),
-  radial-gradient(circle at 50% 48%,rgba(76,233,175,.12),transparent 31%),
-  url("./assets/calypso-hero.webp") center/cover no-repeat;
-  filter:saturate(.74) contrast(1.03);
-  transform:scale(1.025);
+.hero{
+  position:relative;
+  min-height:780px;
+  display:grid;
+  grid-template-columns:1.05fr .95fr;
+  overflow:hidden;
+  border-bottom:3px solid #183f2e;
+}
+.hero-left{position:relative;padding:72px 48px 64px;z-index:5}
+.pixel-eyebrow{display:inline-flex;align-items:center;gap:8px;color:var(--mint);font:700 9px/1 var(--mono);text-transform:uppercase;letter-spacing:.10em}
+.pixel-eyebrow:before{content:"";width:10px;height:10px;background:var(--mint);box-shadow:4px 0 0 #4ac38f;animation:pixelBlink 1.4s steps(2) infinite}
+.hero-title{
+  margin:28px 0 18px;
+  font:700 clamp(54px,8vw,105px)/.84 var(--pixel);
+  letter-spacing:-.045em;
+  text-transform:uppercase;
+  color:#edfff4;
+  text-shadow:6px 6px 0 rgba(36,123,87,.28);
+}
+.hero-title span{display:block;color:var(--mint)}
+.hero-copy{
+  max-width:620px;
+  color:#9db2a8;
+  font:500 16px/1.6 var(--ui);
+}
+.hero-copy strong{color:var(--text)}
+.hero-actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:28px}
+.btn{
+  position:relative;
+  min-height:48px;
+  padding:0 16px;
+  display:inline-flex;align-items:center;justify-content:center;gap:9px;
+  border:2px solid #234d3a;
+  background:#0a1810;
+  color:#dff9ea;
+  font:700 9px/1 var(--mono);
+  text-transform:uppercase;
+  cursor:pointer;
+  transition:transform .12s steps(2),box-shadow .12s steps(2),background .12s steps(2);
+}
+.btn:hover{transform:translate(-3px,-3px);box-shadow:5px 5px 0 #0a3322;background:#0e2418}
+.btn.primary{color:#02140d;background:var(--mint);border-color:var(--mint);box-shadow:5px 5px 0 #176343}
+.btn.primary:hover{box-shadow:8px 8px 0 #176343;background:#b9ffe2}
+.btn svg{width:14px;height:14px;shape-rendering:crispEdges}
+.hero-info{
+  margin-top:46px;
+  display:grid;
+  grid-template-columns:repeat(2,minmax(150px,1fr));
+  gap:8px;
+  max-width:610px;
+}
+.info-cell{padding:13px 14px;border:2px solid #173c2b;background:#07130d}
+.info-cell small{display:block;color:#587466;font:700 7px/1 var(--mono);text-transform:uppercase}
+.info-cell strong{display:block;margin-top:7px;color:#dff9ea;font:700 14px/1 var(--pixel)}
+.hero-right{
+  position:relative;
+  min-height:780px;
+  background:
+    linear-gradient(90deg,#050b07 0%,rgba(5,11,7,.35) 18%,rgba(5,11,7,.05)),
+    url("./assets/calypso-hero.webp") center/cover no-repeat;
+  border-left:3px solid #173c2b;
+  overflow:hidden;
+}
+.hero-right:after{
+  content:"";
+  position:absolute;inset:0;
+  background:
+    linear-gradient(180deg,transparent 55%,rgba(2,6,4,.88)),
+    radial-gradient(circle at 50% 42%,transparent 18%,rgba(2,6,4,.48) 60%);
 }
 .hero-grid{
-  position:absolute;inset:0;opacity:.15;
-  background-image:linear-gradient(rgba(164,255,219,.06) 1px,transparent 1px),linear-gradient(90deg,rgba(164,255,219,.06) 1px,transparent 1px);
-  background-size:48px 48px;mask-image:radial-gradient(circle at 50% 45%,#000,transparent 76%);
+  position:absolute;inset:0;z-index:1;opacity:.25;
+  background-image:linear-gradient(rgba(159,255,213,.07) 1px,transparent 1px),linear-gradient(90deg,rgba(159,255,213,.07) 1px,transparent 1px);
+  background-size:40px 40px;
+  mask-image:linear-gradient(90deg,transparent,#000 30%,#000 80%,transparent);
 }
-.pixel-cloud{position:absolute;opacity:.7;filter:drop-shadow(0 0 20px rgba(56,223,158,.16))}
-.pixel-cloud:before,.pixel-cloud:after{content:"";position:absolute;background:rgba(56,223,158,.20);box-shadow:0 0 0 1px rgba(164,255,219,.06)}
-.cloud-1{left:5%;top:18%;width:150px;height:52px}.cloud-1:before{width:90px;height:36px;left:18px;top:12px}.cloud-1:after{width:52px;height:20px;left:76px;top:0}
-.cloud-2{right:5%;bottom:23%;width:190px;height:56px}.cloud-2:before{width:108px;height:40px;right:22px;top:11px}.cloud-2:after{width:58px;height:22px;right:92px;top:0}
-.hero-orbit{position:absolute;left:50%;top:49%;transform:translate(-50%,-50%);border-radius:50%;pointer-events:none}
-.hero-orbit.one{width:min(620px,72vw);aspect-ratio:1;border:1px solid rgba(164,255,219,.16);box-shadow:0 0 110px rgba(56,223,158,.08)}
-.hero-orbit.two{width:min(460px,56vw);aspect-ratio:1;border:1px dashed rgba(164,255,219,.18);animation:spin 60s linear infinite}
-.hero-orbit.three{width:min(330px,42vw);aspect-ratio:1;border:1px solid rgba(164,255,219,.25);animation:spinReverse 40s linear infinite}
-.hero-core{position:absolute;left:50%;top:49%;transform:translate(-50%,-50%);width:min(250px,31vw);aspect-ratio:1;padding:40px;border-radius:50%;background:radial-gradient(circle,rgba(143,245,199,.09),transparent 68%);border:1px solid rgba(164,255,219,.22);box-shadow:0 0 90px rgba(56,223,158,.1)}
-.hero-core img{width:100%;height:100%;object-fit:contain;filter:drop-shadow(0 25px 55px rgba(56,223,158,.22))}
-.hero-content{position:relative;z-index:5;text-align:center;display:flex;align-items:center;flex-direction:column;max-width:950px;padding:100px 20px 76px}
-.hero-pills{display:flex;flex-wrap:wrap;justify-content:center;gap:7px;margin-bottom:22px}
-.pill{
-  display:inline-flex;align-items:center;gap:7px;min-height:30px;padding:0 11px;border-radius:999px;
-  color:#b7cec3;background:rgba(7,20,13,.58);border:1px solid rgba(164,255,219,.15);
-  font:600 8px/1 var(--mono);letter-spacing:.08em;text-transform:uppercase;
-  backdrop-filter:blur(12px);
+.hero-logo{
+  position:absolute;z-index:4;
+  left:50%;top:44%;transform:translate(-50%,-50%);
+  width:min(370px,56%);
+  padding:50px;
+  border:3px solid rgba(159,255,213,.26);
+  background:rgba(4,12,8,.44);
+  box-shadow:
+    0 0 0 8px rgba(4,13,9,.23),
+    0 0 60px rgba(59,227,159,.16);
+  animation:heroFloat 5s steps(90) infinite;
 }
-.pill-dot{width:6px;height:6px;border-radius:2px;background:var(--md-primary);box-shadow:0 0 10px rgba(143,245,199,.7)}
-.hero h1{
-  margin:0;font:600 clamp(78px,12vw,158px)/.76 var(--pixel-font);
-  letter-spacing:-.065em;color:#effaf3;text-shadow:0 0 50px rgba(143,245,199,.07);
+.hero-logo:before,.hero-logo:after{content:"";position:absolute;background:var(--mint)}
+.hero-logo:before{left:-18px;top:50%;width:36px;height:3px}.hero-logo:after{left:50%;top:-18px;width:3px;height:36px}
+.hero-logo img{width:100%;height:100%;filter:drop-shadow(0 12px 22px rgba(59,227,159,.35))}
+.hero-readout{
+  position:absolute;z-index:5;left:28px;bottom:28px;right:28px;
+  display:flex;justify-content:space-between;gap:14px;align-items:flex-end;
+  color:#8ba397;font:700 8px/1.6 var(--mono);text-transform:uppercase;
 }
-.hero h1 span{display:block;color:var(--md-primary)}
-.hero-lede{margin:24px 0 0;color:#c1d0c8;font-size:18px;line-height:1.55;max-width:650px}
-.hero-lede strong{color:var(--md-primary)}
-.hero-actions{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin-top:30px}
-.btn{
-  min-height:50px;padding:0 18px;border:1px solid var(--md-outline-variant);border-radius:999px;
-  display:inline-flex;align-items:center;justify-content:center;gap:9px;position:relative;overflow:hidden;
-  color:var(--ink);background:var(--md-surface-2);cursor:pointer;
-  font:700 10px/1 var(--mono);letter-spacing:.07em;text-transform:uppercase;
-  transition:transform .22s ease,background .22s ease,border-color .22s ease,box-shadow .22s ease;
-}
-.btn:after{content:"";position:absolute;inset:0;background:linear-gradient(120deg,transparent 25%,rgba(255,255,255,.13),transparent 75%);transform:translateX(-130%);transition:.65s ease}
-.btn:hover{transform:translateY(-3px);background:var(--md-surface-3);border-color:var(--md-outline);box-shadow:0 14px 35px rgba(0,0,0,.23)}
-.btn:hover:after{transform:translateX(130%)}
-.btn.primary{color:var(--md-on-primary);background:var(--md-primary);border-color:transparent;box-shadow:0 10px 30px rgba(56,223,158,.14)}
-.btn.primary:hover{background:#b0ffdd;border-color:transparent;box-shadow:0 16px 42px rgba(56,223,158,.22)}
-.btn svg{width:16px;height:16px;shape-rendering:crispEdges}
-.hero-stats{
-  margin-top:52px;display:grid;grid-template-columns:repeat(4,max-content);gap:8px;
-}
-.stat{
-  min-width:128px;padding:14px 15px;text-align:left;border:1px solid rgba(164,255,219,.13);
-  border-radius:17px;background:rgba(7,19,12,.58);backdrop-filter:blur(16px);
-}
-.stat small{display:block;color:#6f887c;font:700 8px/1 var(--mono);letter-spacing:.12em;text-transform:uppercase}
-.stat strong{display:block;margin-top:6px;color:#e8f5ee;font:600 15px/1.1 var(--pixel-font)}
-.scroll-hint{margin-top:34px;display:flex;flex-direction:column;align-items:center;gap:9px;color:#769087;font:700 8px/1 var(--mono);letter-spacing:.12em;text-transform:uppercase}
-.scroll-hint i{width:18px;height:27px;border:1px solid rgba(164,255,219,.2);border-radius:9px;position:relative}
-.scroll-hint i:after{content:"";position:absolute;left:50%;top:6px;width:4px;height:6px;border-radius:2px;background:var(--md-primary);transform:translateX(-50%);animation:scrollDot 1.8s ease-in-out infinite}
+.hero-readout strong{color:var(--mint)}
+.pixel-star{position:absolute;width:7px;height:7px;background:var(--mint);z-index:3;box-shadow:0 0 12px rgba(159,255,213,.75)}
+.s1{left:17%;top:24%;animation:float8 4.4s steps(22) infinite}.s2{right:16%;top:18%;animation:float8 5.1s steps(22) infinite reverse}.s3{right:22%;bottom:27%;animation:blink 1.2s steps(2) infinite}.s4{left:25%;bottom:20%;animation:blink 1.7s steps(2) infinite reverse}
 
-.material-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
-.value-card{
-  position:relative;min-height:245px;padding:24px;overflow:hidden;
-  border-radius:26px;border:1px solid var(--md-outline-variant);
-  background:linear-gradient(150deg,var(--md-surface-3),var(--md-surface));
-  transition:transform .32s cubic-bezier(.2,.72,.25,1),box-shadow .32s ease,border-color .32s ease;
+.section{position:relative;padding:92px 40px 0;scroll-margin-top:92px}
+.section:last-of-type{padding-bottom:80px}
+.section-head{display:grid;grid-template-columns:1fr .9fr;gap:44px;align-items:end;margin-bottom:24px}
+.section-number{color:#4e7564;font:700 8px/1 var(--mono);letter-spacing:.12em}
+.section-title{margin:12px 0 0;font:700 clamp(39px,5vw,68px)/.9 var(--pixel);letter-spacing:-.035em;text-transform:uppercase}
+.section-title span{color:var(--mint)}
+.section-copy{margin:0;color:#879e92;font:500 13px/1.75 var(--ui)}
+.pixel-rule{height:3px;margin-top:16px;background:repeating-linear-gradient(90deg,var(--line) 0 28px,transparent 28px 36px);opacity:.8}
+
+.feature-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:9px;
 }
-.value-card:hover{transform:translateY(-7px);border-color:var(--md-outline);box-shadow:0 28px 68px rgba(0,0,0,.28)}
-.value-card .num{font:700 9px/1 var(--mono);color:#5e796d;letter-spacing:.14em}
-.value-icon{position:absolute;right:20px;top:20px;width:34px;height:34px;color:var(--md-primary)}
-.value-card h3{margin:76px 0 9px;font:600 25px/1 var(--pixel-font)}
-.value-card p{margin:0;color:#80968c;font-size:12px;line-height:1.75}
-.value-card .pixel-bar{position:absolute;left:24px;bottom:21px;display:flex;gap:4px}.pixel-bar i{width:9px;height:9px;background:#1b4d39}.pixel-bar i:nth-child(2),.pixel-bar i:nth-child(4){background:var(--md-primary)}.pixel-bar i:nth-child(3){background:#4da880}
-
-.experience-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
-.experience-card{
-  position:relative;padding:12px;border:1px solid var(--md-outline-variant);background:linear-gradient(150deg,var(--md-surface-2),#06100b);
-  border-radius:30px;overflow:hidden;transition:transform .35s ease,border-color .35s ease,box-shadow .35s ease
+.feature{
+  min-height:270px;
+  padding:20px;
+  background:var(--panel);
+  border:3px solid #173c2b;
+  position:relative;
+  overflow:hidden;
+  transition:transform .13s steps(2),border-color .13s steps(2),background .13s steps(2);
 }
-.experience-card:hover{transform:translateY(-7px);border-color:var(--md-outline);box-shadow:0 30px 80px rgba(0,0,0,.26)}
-.experience-image{position:relative;aspect-ratio:16/9;overflow:hidden;border-radius:22px;background:#030805;border:1px solid rgba(164,255,219,.09)}
-.experience-image img{width:100%;height:100%;object-fit:cover;transition:transform .7s cubic-bezier(.2,.72,.25,1),filter .45s ease}
-.experience-card:hover .experience-image img{transform:scale(1.035);filter:saturate(1.08)}
-.experience-image:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 57%,rgba(2,8,5,.72))}
-.experience-copy{padding:18px 8px 8px}
-.experience-top{display:flex;justify-content:space-between;gap:14px;align-items:flex-start}
-.experience-copy h3{margin:5px 0 0;font:600 37px/.98 var(--pixel-font)}
-.experience-index{padding-top:5px;color:#587468;font:700 8px/1 var(--mono);letter-spacing:.15em}
-.experience-copy p{margin:11px 0 0;color:#81988d;font-size:12px;line-height:1.72}
-.tags{display:flex;gap:7px;flex-wrap:wrap;margin-top:15px}.tag{padding:7px 10px;border-radius:999px;border:1px solid var(--md-outline-variant);background:rgba(164,255,219,.025);color:#7f9a8e;font:700 8px/1 var(--mono);letter-spacing:.07em;text-transform:uppercase}.tag.accent{color:var(--md-primary);border-color:rgba(143,245,199,.25)}
-.section-note{margin-top:16px;text-align:center;color:#5f796e;font:700 8px/1.6 var(--mono);letter-spacing:.08em;text-transform:uppercase}
-
-.install-shell{border:1px solid var(--md-outline-variant);border-radius:30px;background:linear-gradient(150deg,var(--md-surface-2),#06100b);padding:34px;overflow:hidden}
-.install-track{position:relative;margin:12px auto 34px;max-width:920px}
-.install-line{position:absolute;left:8%;right:8%;top:17px;height:3px;border-radius:999px;background:#183429}
-.install-progress{position:absolute;left:8%;top:17px;width:63%;height:3px;border-radius:999px;background:var(--md-primary);box-shadow:0 0 18px rgba(143,245,199,.45)}
-.install-steps{position:relative;display:grid;grid-template-columns:repeat(5,1fr);gap:10px}
-.install-step{display:flex;flex-direction:column;align-items:center;gap:9px}
-.install-dot{width:14px;height:14px;border-radius:5px;transform:rotate(45deg);border:1px solid #315244;background:var(--md-background);box-shadow:0 0 0 6px var(--md-surface-2)}
-.install-step.active .install-dot,.install-step.done .install-dot{background:var(--md-primary);border-color:var(--md-primary);box-shadow:0 0 0 6px var(--md-surface-2),0 0 22px rgba(143,245,199,.34)}
-.install-step span{font:700 8px/1 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:#637b70}.install-step.active span,.install-step.done span{color:#e2f4ea}
-.install-terminal{max-width:880px;margin:0 auto;border:1px solid var(--md-outline-variant);border-radius:20px;overflow:hidden;background:#020805}
-.install-terminal-head{display:flex;justify-content:space-between;gap:12px;padding:14px 16px;border-bottom:1px solid var(--md-outline-variant);font:700 8px/1 var(--mono);letter-spacing:.11em;text-transform:uppercase}.install-terminal-head strong{color:var(--md-primary)}.install-terminal-head span{color:#698176}
-.install-log{padding:20px;height:190px;color:#678176;font:500 10px/2 var(--mono);overflow:hidden;background:linear-gradient(180deg,#020805,#030c07)}
-.install-log .ok{color:#8cb6a6}.install-log .active{color:#dcfaec}
-.progress{height:4px;background:#0f2419}.progress span{display:block;height:100%;width:72%;background:linear-gradient(90deg,#42c891,var(--md-primary));box-shadow:0 0 18px rgba(143,245,199,.38);animation:loading 3.6s ease-in-out infinite}
-
-.arch-grid{display:grid;grid-template-columns:.92fr 1.08fr;gap:60px;align-items:center}
-.arch-copy p{max-width:620px;color:#839990;font-size:14px;line-height:1.85}
-.arch-list{display:grid;gap:9px;margin-top:27px}
-.arch-item{display:grid;grid-template-columns:38px 1fr;gap:13px;padding:15px 0;border-top:1px solid var(--md-outline-variant)}
-.arch-item svg{width:18px;height:18px;color:var(--md-primary);shape-rendering:crispEdges}.arch-item strong{display:block;font:700 10px/1 var(--mono);letter-spacing:.08em;text-transform:uppercase}.arch-item span{display:block;margin-top:6px;color:#6f877c;font-size:11px;line-height:1.62}
-.stack{position:relative;min-height:470px;display:grid;place-items:center}
-.layer{
-  position:absolute;width:78%;height:132px;padding:22px;border:1px solid var(--md-outline);
-  background:linear-gradient(150deg,var(--md-surface-3),#07110c);box-shadow:0 28px 55px rgba(0,0,0,.24);
-  display:flex;align-items:flex-end;justify-content:space-between;gap:12px;transition:.5s ease
-}
-.layer:nth-child(1){transform:translateY(112px) rotate(-3deg)}.layer:nth-child(2){transform:translateY(0) rotate(2deg)}.layer:nth-child(3){transform:translateY(-112px) rotate(-3deg)}
-.stack:hover .layer:nth-child(1){transform:translateY(132px) rotate(-5deg)}.stack:hover .layer:nth-child(2){transform:translateY(0) rotate(0deg)}.stack:hover .layer:nth-child(3){transform:translateY(-132px) rotate(4deg)}
-.layer span{font:700 9px/1 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:#89a398}.layer .mini{display:flex;gap:5px}.layer .mini i{width:7px;height:7px;background:#1e4b38}.layer .mini i:nth-child(2){background:var(--md-primary)}
-.layer.center{border-color:rgba(143,245,199,.32);box-shadow:0 28px 70px rgba(31,216,148,.08)}
-
-.open-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:14px}
-.open-card,.creator-card{padding:30px;border:1px solid var(--md-outline-variant);border-radius:30px;background:linear-gradient(145deg,var(--md-surface-2),#06100b);position:relative;overflow:hidden}
-.open-card h3{margin:11px 0 0;font:600 45px/.95 var(--pixel-font)}
-.open-card p{margin:12px 0 0;color:#80968c;font-size:13px;line-height:1.78}
-.link-list{display:grid;gap:9px;margin-top:22px}.link-row{display:flex;justify-content:space-between;gap:12px;align-items:center;padding:15px 16px;border:1px solid var(--md-outline-variant);border-radius:18px;background:rgba(4,13,9,.66);transition:.23s ease}.link-row:hover{transform:translateX(4px);border-color:var(--md-outline);background:var(--md-surface-3)}.link-left{display:flex;align-items:center;gap:10px}.link-left svg{width:18px;height:18px;color:var(--md-primary);shape-rendering:crispEdges}.link-left span{font:700 9px/1 var(--mono);letter-spacing:.07em;text-transform:uppercase}.link-row b{color:#5f786d;font:700 12px/1 var(--mono)}
-.creator-top{display:flex;align-items:center;gap:16px}
-.avatar{width:82px;height:82px;border-radius:24px;border:1px solid var(--md-outline);background:var(--md-surface-3);overflow:hidden;position:relative}.avatar img{width:100%;height:100%;object-fit:cover;filter:saturate(.78)}.avatar:after{content:"";position:absolute;inset:7px;border:1px solid rgba(164,255,219,.16);border-radius:18px}
-.creator h3{margin:0;font:600 34px/1 var(--pixel-font)}.creator p{margin:6px 0 0;color:#6d857a;font:700 8px/1 var(--mono);letter-spacing:.09em;text-transform:uppercase}
-.quote{margin:24px 0 0;padding:14px 0 0;border-top:1px solid var(--md-outline-variant);color:#8aa197;font-size:13px;line-height:1.78}
-.socials{display:flex;gap:8px;margin-top:22px}.icon-btn{width:40px;height:40px;border:1px solid var(--md-outline-variant);border-radius:14px;display:grid;place-items:center;background:var(--md-surface-3);color:#89a196;transition:.2s ease}.icon-btn:hover{transform:translateY(-3px);color:var(--md-primary);border-color:var(--md-outline)}
-
-.pixel-lab{margin-top:14px;padding:20px;border-radius:26px;background:linear-gradient(150deg,#0c1e15,#06100b);border:1px solid var(--md-outline-variant)}
-.lab-top{display:flex;justify-content:space-between;gap:10px;align-items:center}.lab-title{font:700 10px/1 var(--mono);letter-spacing:.09em;text-transform:uppercase;color:var(--md-primary)}.lab-state{display:flex;align-items:center;gap:6px;color:#70897d;font:700 8px/1 var(--mono);text-transform:uppercase}.lab-state i{width:6px;height:6px;background:var(--md-primary);border-radius:2px;box-shadow:0 0 12px rgba(143,245,199,.7);animation:blink 1.8s ease-in-out infinite}
-.pixel-map{display:grid;grid-template-columns:repeat(24,1fr);gap:3px;margin-top:18px}.pixel-map i{aspect-ratio:1;background:#0d2c20;border-radius:2px}.pixel-map i:nth-child(7n){background:#1b523c}.pixel-map i:nth-child(11n){background:#2a6c51}.pixel-map i:nth-child(13n){background:var(--md-primary);box-shadow:0 0 11px rgba(143,245,199,.34)}
-
-.final{
-  margin-top:112px;padding:70px 28px 90px;position:relative;overflow:hidden;
-  border-top:1px solid var(--md-outline-variant);
+.feature:hover{transform:translate(-3px,-3px);border-color:#2d6d4f;background:#0c1f15}
+.feature:before{
+  content:"";
+  position:absolute;right:-24px;bottom:-24px;width:110px;height:110px;
   background:
-    radial-gradient(circle at 50% 80%,rgba(56,223,158,.16),transparent 28%),
-    radial-gradient(circle at 10% 20%,rgba(143,245,199,.07),transparent 25%);
+    linear-gradient(var(--line2) 0 0) 0 0/22px 22px no-repeat,
+    linear-gradient(var(--line2) 0 0) 28px 28px/22px 22px no-repeat,
+    linear-gradient(var(--line2) 0 0) 56px 56px/22px 22px no-repeat;
+  opacity:.22;
 }
-.final-orbit{position:absolute;left:50%;top:58%;transform:translate(-50%,-50%);width:620px;height:620px;border:1px solid rgba(164,255,219,.10);border-radius:50%;box-shadow:0 0 110px rgba(56,223,158,.06)}.final-orbit:after{content:"";position:absolute;inset:70px;border:1px dashed rgba(164,255,219,.12);border-radius:50%;animation:spinReverse 65s linear infinite}
-.final-content{position:relative;z-index:2;max-width:800px;margin:0 auto;text-align:center}.final h2{margin:13px 0 14px;font:600 clamp(62px,8vw,105px)/.84 var(--pixel-font);letter-spacing:-.06em}.final p{margin:0 auto;max-width:630px;color:#879c93;font-size:14px;line-height:1.8}.final-actions{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin-top:28px}.final-pills{display:flex;justify-content:center;gap:7px;flex-wrap:wrap;margin-top:26px}.final-pills span{padding:8px 10px;border-radius:999px;border:1px solid var(--md-outline-variant);color:#718a7e;background:rgba(164,255,219,.025);font:700 8px/1 var(--mono);letter-spacing:.08em;text-transform:uppercase}
+.feature-top{display:flex;justify-content:space-between;align-items:center}.feature-top small{color:#5e7b6d;font:700 8px/1 var(--mono)}.feature-icon{width:30px;height:30px;color:var(--mint);shape-rendering:crispEdges}
+.feature h3{margin:64px 0 10px;font:700 22px/1 var(--pixel);text-transform:uppercase}.feature p{margin:0;color:#789084;font-size:11px;line-height:1.72}
+.feature-bar{position:absolute;left:20px;bottom:18px;display:flex;gap:4px}.feature-bar i{width:10px;height:10px;background:#17442f}.feature-bar i:nth-child(2){background:#2c7755}.feature-bar i:nth-child(4){background:var(--mint)}
 
-.footer{display:flex;justify-content:space-between;gap:16px;align-items:center;flex-wrap:wrap;padding:22px 24px 30px;border-top:1px solid var(--md-outline-variant);color:#5f776c;font:700 8px/1.6 var(--mono);letter-spacing:.04em;text-transform:uppercase}.footer strong{color:#80d9b2}.footer-links{display:flex;gap:16px;flex-wrap:wrap}.footer-links a:hover{color:#d9f8ea}
+.desktop-shell{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.desktop-card{border:3px solid #173c2b;background:#061109;padding:10px;position:relative;transition:transform .14s steps(2),border-color .14s steps(2),box-shadow .14s steps(2)}
+.desktop-card:hover{transform:translate(-3px,-3px);border-color:#2d6d4f;box-shadow:7px 7px 0 #061c12}
+.desktop-shot{position:relative;aspect-ratio:16/9;overflow:hidden;border:3px solid #0e2a1d;background:#020805}
+.desktop-shot img{width:100%;height:100%;object-fit:cover;filter:saturate(.85) contrast(1.03);transition:filter .25s steps(3),transform .35s steps(8)}
+.desktop-card:hover .desktop-shot img{filter:saturate(1.05) contrast(1.06);transform:scale(1.018)}
+.desktop-label{display:flex;justify-content:space-between;gap:12px;align-items:flex-start;padding:15px 2px 3px}.desktop-label small{color:#597567;font:700 8px/1 var(--mono);letter-spacing:.1em}.desktop-label h3{margin:6px 0 0;font:700 26px/1 var(--pixel);text-transform:uppercase}.desktop-label p{margin:10px 0 0;color:#7b9187;font-size:11px;line-height:1.65}.desktop-index{color:#537164;font:700 8px/1 var(--mono)}
+.tags{display:flex;gap:5px;flex-wrap:wrap;margin-top:12px}.tag{padding:7px 9px;border:2px solid #1b4431;background:#09170f;color:#6e897c;font:700 7px/1 var(--mono);text-transform:uppercase}.tag.accent{color:var(--mint);border-color:#27694b}
+.note{margin-top:14px;padding:10px 12px;border:2px dashed #214d39;background:#07130d;color:#617b6e;font:700 8px/1.6 var(--mono);text-align:center;text-transform:uppercase}
 
-.scroll-progress{position:fixed;z-index:100;left:0;top:0;width:100%;height:3px;background:linear-gradient(90deg,var(--md-primary),var(--pixel-2));transform:scaleX(0);transform-origin:left;box-shadow:0 0 15px rgba(143,245,199,.35)}
-.pointer-glow{position:fixed;z-index:1;left:0;top:0;width:280px;height:280px;border-radius:50%;pointer-events:none;background:radial-gradient(circle,rgba(56,223,158,.10),transparent 68%);filter:blur(10px);transform:translate(-50%,-50%)}
-.reveal{opacity:0;transform:translateY(22px);transition:opacity .72s ease,transform .72s cubic-bezier(.2,.72,.25,1)}.reveal.visible{opacity:1;transform:none}
-[data-float]{animation:float 6s ease-in-out infinite}
-.ripple{position:absolute;border-radius:50%;pointer-events:none;background:rgba(255,255,255,.35);transform:scale(0);animation:ripple .55s ease-out forwards}
+.install-grid{display:grid;grid-template-columns:.95fr 1.05fr;gap:10px}
+.install-card{border:3px solid #173c2b;background:#07130d;padding:22px;position:relative}
+.boot{font:700 11px/1.7 var(--mono);color:#719083}.boot .ok{color:#9ce6c4}.boot .active{color:#e8fff2}.boot .warn{color:#d9ce8b}
+.bootbar{margin-top:20px;height:16px;border:3px solid #214e39;padding:2px;display:flex;gap:2px}.bootbar i{flex:1;background:#173f2e}.bootbar i.fill{background:var(--mint)}
+.install-steps{display:grid;gap:7px;margin-top:20px}.install-step{display:grid;grid-template-columns:32px 1fr;gap:10px;align-items:center;padding:9px 10px;border:2px solid #173e2d;background:#08170f}.install-step.active{border-color:#2a6e4e;background:#0c2015}.install-step b{width:20px;height:20px;display:grid;place-items:center;background:#0f2e20;color:#7fa795;font:700 8px/1 var(--mono)}.install-step.active b{background:var(--mint);color:#032015}.install-step span{font:700 8px/1.3 var(--mono);text-transform:uppercase;color:#789185}.install-step.active span{color:#dcfaec}
 
-@keyframes spin{to{transform:translate(-50%,-50%) rotate(360deg)}}
-@keyframes spinReverse{to{transform:translate(-50%,-50%) rotate(-360deg)}}
-@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-9px)}}
-@keyframes scrollDot{0%,100%{transform:translate(-50%,0);opacity:.35}50%{transform:translate(-50%,7px);opacity:1}}
-@keyframes loading{0%{transform:scaleX(.78);transform-origin:left}58%{transform:scaleX(1);transform-origin:left}100%{transform:scaleX(.82);transform-origin:left}}
+.arch-layout{display:grid;grid-template-columns:.86fr 1.14fr;gap:35px;align-items:center}
+.arch-list{display:grid;gap:8px;margin-top:24px}.arch-item{display:grid;grid-template-columns:28px 1fr;gap:12px;padding:13px 0;border-top:2px solid #143627}.arch-item svg{width:18px;height:18px;color:var(--mint);shape-rendering:crispEdges}.arch-item b{display:block;font:700 9px/1 var(--mono);text-transform:uppercase}.arch-item span{display:block;margin-top:5px;color:#718a7d;font-size:10px;line-height:1.65}
+.map{
+  min-height:420px;
+  border:3px solid #173c2b;
+  background:
+    linear-gradient(rgba(23,69,48,.26) 2px,transparent 2px),
+    linear-gradient(90deg,rgba(23,69,48,.26) 2px,transparent 2px),
+    #07140d;
+  background-size:32px 32px;
+  position:relative;
+  overflow:hidden;
+}
+.map-line{position:absolute;background:#2b6b4d}.map-line.h1{left:8%;right:8%;top:38%;height:3px}.map-line.h2{left:8%;right:22%;top:68%;height:3px}.map-line.v1{top:11%;bottom:12%;left:30%;width:3px}.map-line.v2{top:20%;bottom:12%;left:67%;width:3px}.map-node{position:absolute;width:18px;height:18px;background:var(--mint);box-shadow:0 0 0 5px #092016,0 0 0 7px #24563f;animation:blink 1.8s steps(2) infinite}.node1{left:18%;top:29%}.node2{left:30%;top:66%}.node3{left:67%;top:38%}.node4{left:78%;top:67%}.map-label{position:absolute;padding:7px 9px;border:2px solid #204b37;background:#07130d;color:#95ad9f;font:700 7px/1 var(--mono);text-transform:uppercase}.label1{left:12%;top:17%}.label2{left:34%;top:71%}.label3{left:71%;top:27%}.label4{right:9%;top:73%}.map-center{position:absolute;left:50%;top:52%;transform:translate(-50%,-50%);padding:22px;border:3px solid #2a6d4e;background:#0a1d14;box-shadow:10px 10px 0 #05100a;text-align:center}.map-center strong{display:block;font:700 18px/1 var(--pixel);color:var(--mint)}.map-center span{display:block;margin-top:8px;color:#779386;font:700 7px/1 var(--mono)}
+
+.community{display:grid;grid-template-columns:1.1fr .9fr;gap:10px}
+.community-card{border:3px solid #173c2b;background:#07130d;padding:22px}.community-card h3{margin:9px 0 0;font:700 30px/1 var(--pixel);text-transform:uppercase}.community-card p{margin:11px 0 0;color:#7e968a;font-size:11px;line-height:1.75}
+.link-grid{display:grid;gap:7px;margin-top:18px}.link{display:flex;justify-content:space-between;align-items:center;padding:12px;border:2px solid #173d2c;background:#08170f;font:700 8px/1 var(--mono);text-transform:uppercase;transition:.14s steps(2)}.link:hover{transform:translateX(4px);border-color:#2b6b4d;background:#0c2015}.link span:last-child{color:#5d786b}
+.maintainer{display:flex;gap:14px;align-items:center}.maintainer img{width:74px;height:74px;object-fit:cover;border:3px solid #2a654a;image-rendering:auto}.maintainer h4{margin:0;font:700 22px/1 var(--pixel)}.maintainer small{display:block;margin-top:6px;color:#6d877a;font:700 7px/1.5 var(--mono);text-transform:uppercase}
+.maintainer-note{margin-top:22px;padding:14px;border-left:4px solid var(--mint);background:#08170f;color:#88a095;font-size:11px;line-height:1.75}
+
+.release{
+  margin-top:70px;
+  border-top:3px solid #183f2e;
+  border-bottom:3px solid #183f2e;
+  padding:68px 40px;
+  background:
+    linear-gradient(90deg,transparent 49.8%,rgba(59,227,159,.06) 50%,transparent 50.2%),
+    linear-gradient(rgba(59,227,159,.06) 1px,transparent 1px),
+    #061109;
+  background-size:100% 100%,24px 24px;
+}
+.release-inner{max-width:900px;margin:0 auto;text-align:center}.release h2{margin:14px 0 12px;font:700 clamp(43px,7vw,78px)/.9 var(--pixel);text-transform:uppercase}.release h2 span{color:var(--mint)}.release p{max-width:650px;margin:0 auto;color:#82998e;font-size:13px;line-height:1.8}.release-actions{display:flex;justify-content:center;gap:8px;flex-wrap:wrap;margin-top:24px}.release-meta{display:flex;justify-content:center;gap:6px;flex-wrap:wrap;margin-top:22px}.release-meta span{padding:8px 9px;border:2px solid #1d4432;background:#07130d;color:#6e887c;font:700 7px/1 var(--mono);text-transform:uppercase}
+
+.footer{
+  display:flex;justify-content:space-between;gap:14px;align-items:center;flex-wrap:wrap;
+  padding:20px 18px 26px;
+  background:#07110b;
+  color:#587166;
+  font:700 7px/1.6 var(--mono);
+  text-transform:uppercase;
+}
+.footer strong{color:#82c5a8}.footer-links{display:flex;gap:12px;flex-wrap:wrap}.footer-links a:hover{color:var(--mint)}
+
+.reveal{opacity:0;transform:translateY(16px);transition:opacity .45s steps(6),transform .45s steps(6)}.reveal.visible{opacity:1;transform:none}
+.cursor-box{position:fixed;z-index:1;left:0;top:0;width:20px;height:20px;pointer-events:none;border:2px solid rgba(159,255,213,.65);transform:translate(-50%,-50%);mix-blend-mode:screen}
+.scrollbar{position:fixed;z-index:100;left:0;top:0;height:4px;width:100%;transform:scaleX(0);transform-origin:left;background:var(--mint);box-shadow:0 0 12px rgba(159,255,213,.5)}
+
 @keyframes blink{0%,100%{opacity:.35}50%{opacity:1}}
-@keyframes ripple{to{transform:scale(3.5);opacity:0}}
-
-@media(max-width:1050px){
-  .nav a:not(.download){display:none}.menu-btn{display:grid}
-  .section-head,.arch-grid,.open-grid{grid-template-columns:1fr;gap:20px}
-  .section-copy{margin:0;max-width:720px}
-  .material-grid{grid-template-columns:1fr 1fr}
-  .arch-grid{gap:42px}
+@keyframes pixelBlink{0%,45%{opacity:1}46%,100%{opacity:.35}}
+@keyframes float8{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+@keyframes heroFloat{0%,100%{transform:translate(-50%,-50%)}50%{transform:translate(-50%,calc(-50% - 7px))}}
+@media(max-width:1060px){
+  .header{grid-template-columns:1fr auto}.nav{display:none}.header-side{display:none}.menu{display:grid}
+  .hero{grid-template-columns:1fr}.hero-right{min-height:540px;border-left:0;border-top:3px solid #173c2b}.hero-left{padding:60px 34px 48px}.hero-title{font-size:clamp(54px,12vw,94px)}
+  .hero-info{max-width:100%}
+  .feature-grid{grid-template-columns:1fr 1fr}.desktop-shell,.install-grid,.arch-layout,.community{grid-template-columns:1fr}
+  .map{min-height:390px}
 }
-@media(max-width:780px){
-  .page{width:calc(100% - 10px);margin:5px auto;border-radius:24px}.container{padding-inline:16px}.section{padding:82px 16px 0}
-  .topbar{min-height:70px;padding:0 13px}.brand-mark{width:40px;height:40px}.brand-text{font-size:16px}.brand-sub{font-size:6px}
-  .hero{min-height:700px}.hero-content{padding:82px 14px 60px}.hero h1{font-size:clamp(72px,19vw,105px)}.hero-lede{font-size:16px}.hero-stats{grid-template-columns:1fr 1fr;gap:7px}.stat{min-width:0}.hero-core{width:49vw;padding:31px}
-  .hero-orbit.one{width:100vw}.hero-orbit.two{width:73vw}.hero-orbit.three{width:53vw}.pixel-cloud{display:none}
-  .material-grid,.experience-grid{grid-template-columns:1fr}
-  .value-card{min-height:220px}.install-shell{padding:22px 14px}.install-track{overflow:auto;padding-bottom:8px}.install-steps{min-width:640px}.install-terminal{border-radius:17px}
-  .stack{min-height:410px}.layer{width:90%;height:112px}
-  .open-card,.creator-card{padding:24px}.creator h3{font-size:30px}
-  .final{margin-top:82px;padding:62px 16px 76px}.final-orbit{width:490px;height:490px}.final h2{font-size:clamp(58px,17vw,88px)}
+@media(max-width:700px){
+  .page{width:calc(100% - 8px);margin:4px auto}.header{min-height:66px;padding:0 10px}.brand img{width:38px;height:38px}.brand-name{font-size:11px}.brand-sub{font-size:6px}
+  .section{padding:72px 16px 0}.section-head{grid-template-columns:1fr;gap:16px}.section-title{font-size:clamp(34px,10vw,55px)}
+  .hero-left{padding:48px 20px 38px}.hero-title{font-size:clamp(50px,15vw,76px)}.hero-copy{font-size:14px}.hero-right{min-height:470px}.hero-logo{width:240px;padding:30px}.hero-readout{left:14px;right:14px;bottom:16px;display:block}.hero-readout div+div{margin-top:5px}
+  .feature-grid{grid-template-columns:1fr}.feature{min-height:220px}.desktop-card{padding:7px}.desktop-label h3{font-size:22px}.desktop-label{display:block}.desktop-index{display:block;margin-top:8px}
+  .install-card{padding:16px}.map{min-height:340px}.map-center{padding:16px}.map-center strong{font-size:14px}
+  .release{margin-top:58px;padding:54px 16px}.release h2{font-size:clamp(36px,11vw,60px)}
   .footer{justify-content:center;text-align:center}
+  .cursor-box{display:none}
 }
 @media(prefers-reduced-motion:reduce){
   *,*:before,*:after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
-  html{scroll-behavior:auto}.pointer-glow{display:none}.reveal{opacity:1;transform:none}
+  html{scroll-behavior:auto}.reveal{opacity:1;transform:none}.cursor-box{display:none}
 }
 </style>
 </head>
 
 <body>
-<div class="scroll-progress" aria-hidden="true"></div>
-<div class="pointer-glow" aria-hidden="true"></div>
+<div class="scrollbar" aria-hidden="true"></div>
+<div class="cursor-box" aria-hidden="true"></div>
 
 <div class="page">
-<header class="topbar">
-  <a class="brand" href="#top" aria-label="Calypso Linux home">
-    <img class="brand-mark" src="./assets/calypso-mark.svg?v=12" alt="Calypso Linux">
-    <span><span class="brand-text">CALYPSO LINUX</span><span class="brand-sub">DESIGNED FOR GREATNESS</span></span>
+<header class="header">
+  <a class="brand" href="#top">
+    <img src="./assets/calypso-mark.svg?v=13" alt="Calypso Linux">
+    <span><span class="brand-name">CALYPSO LINUX</span><span class="brand-sub">DESIGNED FOR GREATNESS</span></span>
   </a>
+
   <nav class="nav" aria-label="Primary">
     <a href="#features">Features</a>
     <a href="#desktop">Desktop</a>
     <a href="#install">Install</a>
-    <a href="#architecture">Architecture</a>
-    <a href="./docs/">Docs</a>
-    <a class="download" href="https://sourceforge.net/projects/calypso-linux/files/" target="_blank" rel="noreferrer">Download ↗</a>
+    <a href="#architecture">System</a>
+    <a href="#community">Project</a>
+    <a href="./docs/">Wiki</a>
+    <a class="download" href="https://sourceforge.net/projects/calypso-linux/files/" target="_blank" rel="noreferrer">DOWNLOAD ↗</a>
   </nav>
-  <button class="menu-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false">
-    <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" shape-rendering="crispEdges"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+
+  <div class="header-side"><i></i><span>System online</span></div>
+  <button class="menu" id="menu" aria-label="Open menu" aria-expanded="false">
+    <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" shape-rendering="crispEdges"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
   </button>
 </header>
 
-<nav class="mobile-nav" id="mobileNav" aria-label="Mobile navigation">
-  <a href="#features">Features</a>
-  <a href="#desktop">Desktop</a>
-  <a href="#install">Install</a>
-  <a href="#architecture">Architecture</a>
-  <a href="./docs/">Docs</a>
-  <a href="https://sourceforge.net/projects/calypso-linux/files/" target="_blank" rel="noreferrer">Download ↗</a>
+<nav class="mobile-nav" id="mobileNav">
+  <a href="#features">Features</a><a href="#desktop">Desktop</a><a href="#install">Install</a><a href="#architecture">System</a><a href="#community">Project</a><a href="./docs/">Wiki</a>
+  <a href="https://sourceforge.net/projects/calypso-linux/files/" target="_blank" rel="noreferrer">DOWNLOAD ↗</a>
 </nav>
 
 <main id="top">
-<section class="hero">
-  <div class="hero-art" aria-hidden="true"></div>
-  <div class="hero-grid" aria-hidden="true"></div>
-  <div class="pixel-cloud cloud-1" aria-hidden="true"></div>
-  <div class="pixel-cloud cloud-2" aria-hidden="true"></div>
-  <div class="hero-orbit one" aria-hidden="true"></div>
-  <div class="hero-orbit two" aria-hidden="true"></div>
-  <div class="hero-orbit three" aria-hidden="true"></div>
-  <div class="hero-core" data-float aria-hidden="true"><img src="./assets/calypso-mark.svg?v=12" alt=""></div>
 
-  <div class="hero-content">
-    <div class="hero-pills reveal">
-      <span class="pill"><i class="pill-dot"></i>Arch based</span>
-      <span class="pill"><i class="pill-dot"></i>x86_64</span>
-      <span class="pill"><i class="pill-dot"></i>Wayland ready</span>
-      <span class="pill"><i class="pill-dot"></i>Open source</span>
-    </div>
-    <div class="kicker reveal">CALYPSO LINUX · SYSTEM 0.2</div>
-    <h1 class="reveal">CALYPSO<span>LINUX</span></h1>
-    <p class="hero-lede reveal">Fast. Lean. Yours.<br><strong>Designed for greatness.</strong> Built around an Arch foundation with a polished KDE Plasma experience and room to make it your own.</p>
+<section class="hero">
+  <div class="hero-left">
+    <div class="pixel-eyebrow">CALYPSO LINUX · ARCH BASE · 0.2</div>
+    <h1 class="hero-title reveal">CALYPSO<span>LINUX</span></h1>
+    <p class="hero-copy reveal">A <strong>fast, lean, pixel-forward</strong> Arch-based Linux experience. KDE Plasma at the center, a future Hyprland direction, and a project that stays understandable from the website to the ISO.</p>
     <div class="hero-actions reveal">
-      <a class="btn primary" href="https://sourceforge.net/projects/calypso-linux/files/" target="_blank" rel="noreferrer">Download ISO <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" shape-rendering="crispEdges"><path d="M12 3v12M7 10l5 5 5-5M5 21h14"/></svg></a>
-      <a class="btn" href="#desktop">See the desktop <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" shape-rendering="crispEdges"><path d="M8 5l8 7-8 7"/></svg></a>
+      <a class="btn primary" href="https://sourceforge.net/projects/calypso-linux/files/" target="_blank" rel="noreferrer">Download ISO ↘</a>
+      <a class="btn" href="#desktop">Explore desktop →</a>
     </div>
-    <div class="hero-stats reveal">
-      <div class="stat"><small>Base</small><strong>Arch Linux</strong></div>
-      <div class="stat"><small>Main desktop</small><strong>KDE Plasma</strong></div>
-      <div class="stat"><small>Alternative</small><strong>Hyprland</strong></div>
-      <div class="stat"><small>Project</small><strong>Open</strong></div>
+
+    <div class="hero-info reveal">
+      <div class="info-cell"><small>Base</small><strong>ARCH LINUX</strong></div>
+      <div class="info-cell"><small>Main desktop</small><strong>KDE PLASMA</strong></div>
+      <div class="info-cell"><small>Future path</small><strong>HYPRLAND</strong></div>
+      <div class="info-cell"><small>Philosophy</small><strong>FAST + LEAN</strong></div>
     </div>
-    <div class="scroll-hint reveal"><span>Scroll to explore</span><i></i></div>
+  </div>
+
+  <div class="hero-right">
+    <div class="hero-grid"></div>
+    <span class="pixel-star s1"></span><span class="pixel-star s2"></span><span class="pixel-star s3"></span><span class="pixel-star s4"></span>
+    <div class="hero-logo pixel-corners">
+      <img src="./assets/calypso-mark.svg?v=13" alt="">
+    </div>
+    <div class="hero-readout">
+      <div><strong>CALYPSO</strong> / SYSTEM STATUS / READY</div>
+      <div>WAYLAND · X86_64 · OPEN SOURCE</div>
+    </div>
   </div>
 </section>
 
 <section id="features" class="section">
   <div class="section-head reveal">
-    <div><div class="kicker">01 · MATERIAL VALUES</div><h2 class="section-title">The basics,<br><em>done deliberately.</em></h2></div>
-    <p class="section-copy">A Material You inspired system of surfaces, spacing, motion and tonal depth — combined with crisp pixel graphics and a very Calypso palette.</p>
+    <div>
+      <div class="section-number">01 · CORE VALUES</div>
+      <h2 class="section-title">Built like a <span>little system.</span></h2>
+      <div class="pixel-rule"></div>
+    </div>
+    <p class="section-copy">Everything gets the pixel treatment — cards, controls, typography, grids and even the decorative motion. The aesthetic is playful without losing the Linux-project seriousness.</p>
   </div>
 
-  <div class="material-grid">
-    <article class="value-card reveal material-shape">
-      <span class="num">01</span>
-      <svg class="value-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" shape-rendering="crispEdges"><path d="M4 16l6-6 3 3 7-8"/><path d="M15 5h5v5"/></svg>
-      <h3>Fast</h3><p>Keep the experience responsive and direct instead of burying the useful parts under unnecessary layers.</p>
-      <div class="pixel-bar" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+  <div class="feature-grid">
+    <article class="feature reveal pixel-corners">
+      <div class="feature-top"><small>01 / SPEED</small><svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" shape-rendering="crispEdges"><path d="M4 16 10 10l3 3 7-8"/><path d="M15 5h5v5"/></svg></div>
+      <h3>Fast</h3><p>A focused default system and a visual language that does not need unnecessary chrome to feel complete.</p>
+      <div class="feature-bar"><i></i><i></i><i></i><i></i></div>
     </article>
-    <article class="value-card reveal material-shape">
-      <span class="num">02</span>
-      <svg class="value-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" shape-rendering="crispEdges"><path d="M4 4h16v16H4z"/><path d="M8 8h8v8H8z"/></svg>
-      <h3>Lean</h3><p>A focused default system with a visual language that leaves room for your applications, files and workflow.</p>
-      <div class="pixel-bar" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+    <article class="feature reveal pixel-corners">
+      <div class="feature-top"><small>02 / WEIGHT</small><svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" shape-rendering="crispEdges"><path d="M4 4h16v16H4z"/><path d="M8 8h8v8H8z"/></svg></div>
+      <h3>Lean</h3><p>Keep the useful parts. Give applications and your own workflow room to breathe.</p>
+      <div class="feature-bar"><i></i><i></i><i></i><i></i></div>
     </article>
-    <article class="value-card reveal material-shape">
-      <span class="num">03</span>
-      <svg class="value-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" shape-rendering="crispEdges"><circle cx="12" cy="12" r="8"/><path d="M12 4v16M4 12h16"/></svg>
-      <h3>Intentional</h3><p>Defaults, artwork, documentation and interactions are designed to feel like one cohesive operating system.</p>
-      <div class="pixel-bar" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+    <article class="feature reveal pixel-corners">
+      <div class="feature-top"><small>03 / DETAIL</small><svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" shape-rendering="crispEdges"><circle cx="12" cy="12" r="8"/><path d="M12 4v16M4 12h16"/></svg></div>
+      <h3>Intentional</h3><p>Defaults, artwork, documentation and interaction design all speak the same visual language.</p>
+      <div class="feature-bar"><i></i><i></i><i></i><i></i></div>
     </article>
-    <article class="value-card reveal material-shape">
-      <span class="num">04</span>
-      <svg class="value-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" shape-rendering="crispEdges"><circle cx="5" cy="12" r="2"/><circle cx="19" cy="6" r="2"/><circle cx="19" cy="18" r="2"/><path d="M7 11l10-4M7 13l10 4"/></svg>
-      <h3>Open</h3><p>Source, configuration and the project itself stay public so curious users can inspect, learn and remix.</p>
-      <div class="pixel-bar" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+    <article class="feature reveal pixel-corners">
+      <div class="feature-top"><small>04 / SOURCE</small><svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" shape-rendering="crispEdges"><circle cx="5" cy="12" r="2"/><circle cx="19" cy="6" r="2"/><circle cx="19" cy="18" r="2"/><path d="M7 11l10-4M7 13l10 4"/></svg></div>
+      <h3>Open</h3><p>See the project, inspect the source, follow the build and learn how the pieces fit together.</p>
+      <div class="feature-bar"><i></i><i></i><i></i><i></i></div>
     </article>
   </div>
 </section>
 
 <section id="desktop" class="section">
   <div class="section-head reveal">
-    <div><div class="kicker">02 · DESKTOP</div><h2 class="section-title">Two ways to use<br><em>Calypso.</em></h2></div>
-    <p class="section-copy">KDE Plasma is the main Calypso desktop. Hyprland is the future alternative for people who prefer tiling, keyboard-driven interaction and a compositor-first workflow.</p>
+    <div>
+      <div class="section-number">02 · DESKTOP SYSTEM</div>
+      <h2 class="section-title">Two ways.<br><span>One system.</span></h2>
+      <div class="pixel-rule"></div>
+    </div>
+    <p class="section-copy">KDE Plasma is the current main desktop. Hyprland is shown as a future design direction for the upcoming Calypso dotfiles.</p>
   </div>
 
-  <div class="experience-grid">
-    <article class="experience-card reveal">
-      <div class="experience-image"><img src="./assets/kde-plasma-representative.svg" alt="Dark KDE Plasma desktop preview for Calypso Linux" loading="lazy"></div>
-      <div class="experience-copy">
-        <div class="experience-top">
-          <div><div class="kicker">MAIN DESKTOP</div><h3>KDE Plasma</h3></div>
-          <span class="experience-index">01 · KDE</span>
-        </div>
-        <p>A complete desktop environment with a familiar workflow, deep customization and a dark emerald direction that lets Calypso feel coherent from boot to desktop.</p>
-        <div class="tags"><span class="tag accent">KDE Plasma</span><span class="tag">Wayland</span><span class="tag">Calypso Dark</span></div>
+  <div class="desktop-shell">
+    <article class="desktop-card reveal">
+      <div class="desktop-shot"><img src="./assets/kde-plasma-representative.svg" alt="Stock-style dark KDE Plasma desktop preview" loading="lazy"></div>
+      <div class="desktop-label">
+        <div><small>MAIN DESKTOP / 01</small><h3>KDE Plasma</h3><p>Dark, polished, customizable and ready for a normal desktop workflow.</p></div>
+        <span class="desktop-index">CURRENT</span>
       </div>
+      <div class="tags"><span class="tag accent">KDE PLASMA</span><span class="tag">WAYLAND</span><span class="tag">DARK</span></div>
     </article>
 
-    <article class="experience-card reveal">
-      <div class="experience-image"><img src="./assets/hyprland-upcoming-representative.svg" alt="Future Calypso Hyprland dotfiles preview" loading="lazy"></div>
-      <div class="experience-copy">
-        <div class="experience-top">
-          <div><div class="kicker">FUTURE DESIGN</div><h3>Hyprland</h3></div>
-          <span class="experience-index">02 · HYPR</span>
-        </div>
-        <p>A keyboard-first tiling workflow under active design. The preview shows the visual direction of the upcoming Calypso Hyprland dotfiles, not a released configuration.</p>
-        <div class="tags"><span class="tag accent">Hyprland</span><span class="tag">Waybar</span><span class="tag">Kitty</span><span class="tag">Dotfiles · Soon</span></div>
+    <article class="desktop-card reveal">
+      <div class="desktop-shot"><img src="./assets/hyprland-upcoming-representative.svg" alt="Future Calypso Hyprland dotfiles design" loading="lazy"></div>
+      <div class="desktop-label">
+        <div><small>FUTURE DESIGN / 02</small><h3>Hyprland</h3><p>A keyboard-first direction for the upcoming Calypso Hyprland dotfiles.</p></div>
+        <span class="desktop-index">UPCOMING</span>
       </div>
+      <div class="tags"><span class="tag accent">HYPRLAND</span><span class="tag">WAYBAR</span><span class="tag">KITTY</span><span class="tag">DOTFILES</span></div>
     </article>
   </div>
-  <div class="section-note">Representative visuals · KDE Plasma is the current main desktop · Hyprland preview shows the future Calypso direction</div>
+  <div class="note reveal">Representative visuals · KDE Plasma is current · Hyprland visual is a future design preview</div>
 </section>
 
 <section id="install" class="section">
   <div class="section-head reveal">
-    <div><div class="kicker">03 · INSTALLATION</div><h2 class="section-title">From live image<br><em>to installed system.</em></h2></div>
-    <p class="section-copy">Calypso uses a graphical installation flow so the important choices are visible. Boot the live image, choose the target storage, create your user and let the installer handle the rest.</p>
+    <div>
+      <div class="section-number">03 · INSTALL</div>
+      <h2 class="section-title">Boot.<br>Click.<br><span>Calypso.</span></h2>
+      <div class="pixel-rule"></div>
+    </div>
+    <p class="section-copy">The live image is built around a graphical installation flow. The important decisions are visible, the rest happens in the background.</p>
   </div>
 
-  <div class="install-shell reveal">
-    <div class="install-track">
-      <div class="install-line"></div><div class="install-progress"></div>
-      <div class="install-steps">
-        <div class="install-step done"><i class="install-dot"></i><span>Boot</span></div>
-        <div class="install-step done"><i class="install-dot"></i><span>Partition</span></div>
-        <div class="install-step done"><i class="install-dot"></i><span>Account</span></div>
-        <div class="install-step active"><i class="install-dot"></i><span>Install</span></div>
-        <div class="install-step"><i class="install-dot"></i><span>Ready</span></div>
+  <div class="install-grid">
+    <article class="install-card reveal">
+      <div class="section-number">BOOT SEQUENCE</div>
+      <div class="boot" style="margin-top:14px">
+        <div><span class="ok">[ OK ]</span> Starting Calypso live environment</div>
+        <div><span class="ok">[ OK ]</span> Loading kernel</div>
+        <div><span class="ok">[ OK ]</span> Preparing graphical session</div>
+        <div><span class="ok">[ OK ]</span> Starting network</div>
+        <div><span class="active">[ .. ]</span> Launching installer</div>
+        <div><span class="warn">[ -- ]</span> Waiting for target disk</div>
       </div>
-    </div>
+      <div class="bootbar" aria-label="Installation progress"><i class="fill"></i><i class="fill"></i><i class="fill"></i><i class="fill"></i><i class="fill"></i><i class="fill"></i><i class="fill"></i><i></i><i></i><i></i></div>
+    </article>
 
-    <div class="install-terminal">
-      <div class="install-terminal-head"><strong>CALYPSO INSTALLATION</strong><span>72% · APPLYING SYSTEM</span></div>
-      <div class="install-log">
-        <p class="ok">[ OK ] Preparing target filesystem...</p>
-        <p class="ok">[ OK ] Unpacking base system...</p>
-        <p class="ok">[ OK ] Applying locale and keyboard...</p>
-        <p class="ok">[ OK ] Configuring boot environment...</p>
-        <p class="active">[ .. ] Installing selected packages and user configuration...</p>
+    <article class="install-card reveal">
+      <div class="section-number">INSTALLER FLOW</div>
+      <div class="install-steps">
+        <div class="install-step active"><b>01</b><span>Boot the live environment</span></div>
+        <div class="install-step"><b>02</b><span>Select storage and layout</span></div>
+        <div class="install-step"><b>03</b><span>Create your user and locale</span></div>
+        <div class="install-step"><b>04</b><span>Apply the system</span></div>
+        <div class="install-step"><b>05</b><span>Reboot into Calypso</span></div>
       </div>
-      <div class="progress"><span></span></div>
-    </div>
+    </article>
   </div>
 </section>
 
 <section id="architecture" class="section">
-  <div class="arch-grid">
-    <div class="arch-copy reveal">
-      <div class="kicker">04 · ARCHITECTURE</div>
-      <h2 class="section-title">Layers that make<br><em>sense.</em></h2>
-      <p>Calypso is organized so the pieces are easy to recognize: the Arch base, Calypso's system decisions and the desktop/user experience on top.</p>
+  <div class="arch-layout">
+    <div class="reveal">
+      <div class="section-number">04 · SYSTEM MAP</div>
+      <h2 class="section-title">Look inside<br><span>the distro.</span></h2>
+      <div class="pixel-rule"></div>
       <div class="arch-list">
-        <div class="arch-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" shape-rendering="crispEdges"><path d="M4 6h16M4 12h16M4 18h16"/></svg><div><strong>Arch base</strong><span>Rolling-release foundation and the package ecosystem Calypso builds upon.</span></div></div>
-        <div class="arch-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" shape-rendering="crispEdges"><path d="M5 5h14v14H5z"/><path d="M9 9h6v6H9z"/></svg><div><strong>Calypso system</strong><span>Distribution defaults, branding, boot configuration, packages, live environment and installer integration.</span></div></div>
-        <div class="arch-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" shape-rendering="crispEdges"><path d="M4 4h16v16H4z"/><path d="M8 8h8v8H8z"/></svg><div><strong>Desktop layer</strong><span>KDE Plasma at the center, with a separate Hyprland configuration direction for power users.</span></div></div>
+        <div class="arch-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" shape-rendering="crispEdges"><path d="M4 6h16M4 12h16M4 18h16"/></svg><div><b>ARCH BASE</b><span>Rolling-release foundation and the package ecosystem underneath Calypso.</span></div></div>
+        <div class="arch-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" shape-rendering="crispEdges"><path d="M5 5h14v14H5z"/><path d="M9 9h6v6H9z"/></svg><div><b>CALYPSO SYSTEM</b><span>Packages, boot entries, branding, installer integration, system defaults and live environment.</span></div></div>
+        <div class="arch-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" shape-rendering="crispEdges"><path d="M4 4h16v16H4z"/><path d="M8 8h8v8H8z"/></svg><div><b>DESKTOP</b><span>KDE Plasma is the current center; Hyprland remains a separate future path.</span></div></div>
       </div>
     </div>
 
-    <div class="stack reveal" aria-label="Calypso architecture stack">
-      <div class="layer"><span>Arch Linux</span><span class="mini"><i></i><i></i><i></i></span></div>
-      <div class="layer center"><span>Calypso System</span><span class="mini"><i></i><i></i><i></i></span></div>
-      <div class="layer"><span>Desktop / User Experience</span><span class="mini"><i></i><i></i><i></i></span></div>
+    <div class="map reveal" aria-label="Pixel map of Calypso system layers">
+      <div class="map-line h1"></div><div class="map-line h2"></div><div class="map-line v1"></div><div class="map-line v2"></div>
+      <span class="map-node node1"></span><span class="map-node node2"></span><span class="map-node node3"></span><span class="map-node node4"></span>
+      <span class="map-label label1">ARCH</span><span class="map-label label2">ISO</span><span class="map-label label3">PLASMA</span><span class="map-label label4">DOTFILES</span>
+      <div class="map-center"><strong>CALYPSO</strong><span>FAST · LEAN · YOURS</span></div>
     </div>
   </div>
 </section>
 
-<section class="section" id="open">
+<section id="community" class="section">
   <div class="section-head reveal">
-    <div><div class="kicker">05 · OPEN SOURCE</div><h2 class="section-title">See how it<br><em>comes together.</em></h2></div>
-    <p class="section-copy">The repository is the project: website, documentation, ISO profile, artwork, package work and configuration all live where people can inspect them.</p>
-  </div>
-
-  <div class="open-grid">
-    <article class="open-card reveal">
-      <div class="kicker">PUBLIC BY DEFAULT</div>
-      <h3>Build it.<br>Inspect it.<br>Remix it.</h3>
-      <p>Calypso is being built in public as a hands-on Linux project. The interesting parts are not hidden behind a black box.</p>
-      <div class="link-list">
-        <a class="link-row" href="https://github.com/Jackson4Rocks/calypso-linux" target="_blank" rel="noreferrer"><span class="link-left"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" shape-rendering="crispEdges"><path d="M5 4h14v16H5z"/><path d="M8 8h8M8 12h5M8 16h7"/></svg><span>Source code</span></span><b>↗</b></a>
-        <a class="link-row" href="./docs/"><span class="link-left"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" shape-rendering="crispEdges"><path d="M5 4h10a4 4 0 0 1 4 4v12H8a3 3 0 0 0-3 3V4Z"/><path d="M8 8h7M8 12h7M8 16h5"/></svg><span>Project wiki</span></span><b>↗</b></a>
-        <a class="link-row" href="https://sourceforge.net/projects/calypso-linux/files/" target="_blank" rel="noreferrer"><span class="link-left"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" shape-rendering="crispEdges"><path d="M12 3v12M7 10l5 5 5-5M5 21h14"/></svg><span>ISO downloads</span></span><b>↗</b></a>
-      </div>
-      <div class="pixel-lab" aria-label="Decorative pixel field">
-        <div class="lab-top"><span class="lab-title">PIXEL FIELD</span><span class="lab-state"><i></i> LIVE</span></div>
-        <div class="pixel-map" id="pixelMap" aria-hidden="true"></div>
-      </div>
-    </article>
-
-    <article class="creator-card reveal">
-      <div class="kicker">06 · THE MAINTAINER</div>
-      <div class="creator-top" style="margin-top:20px">
-        <div class="avatar"><img src="https://github.com/Jackson4Rocks.png?size=256" alt="Leon Sony" loading="lazy"></div>
-        <div><h3>Leon Sony</h3><p>Creator · Maintainer · Linux enthusiast</p></div>
-      </div>
-      <p class="quote">Calypso started as a hands-on way to learn Linux development at 15. It grew into a project covering system configuration, packaging, web design, documentation and the reality of maintaining a distro in public.</p>
-      <div class="socials">
-        <a class="icon-btn" href="https://github.com/Jackson4Rocks" target="_blank" rel="noreferrer" aria-label="GitHub"><svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.7" shape-rendering="crispEdges"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.9a3.3 3.3 0 0 0-.94-2.5c3.13-.35 6.4-1.53 6.4-6.9a5.4 5.4 0 0 0-1.44-3.75A5 5 0 0 0 19.94 3S18.76 2.62 17.2 4.56a13.5 13.5 0 0 0-7.2 0C8.44 2.62 7.26 3 7.26 3A5 5 0 0 0 6.18 6.95 5.4 5.4 0 0 0 4.74 10.7c0 5.36 3.27 6.54 6.4 6.9a3.3 3.3 0 0 0-.94 2.5V22"/></svg></a>
-        <a class="icon-btn" href="https://t.me/CalypsoLinux" target="_blank" rel="noreferrer" aria-label="Telegram updates"><span style="font:700 9px/1 var(--mono)">TG</span></a>
-      </div>
-    </article>
-  </div>
-</section>
-
-<section class="final">
-  <div class="final-orbit" aria-hidden="true"></div>
-  <div class="final-content reveal">
-    <div class="kicker">07 · PUBLIC RELEASES</div>
-    <h2>Make Linux<br><em>feel deliberate.</em></h2>
-    <p>Explore the current Calypso Linux releases, read the project wiki, or inspect the source. The system is yours once you boot it.</p>
-    <div class="final-actions">
-      <a class="btn primary" href="https://sourceforge.net/projects/calypso-linux/files/" target="_blank" rel="noreferrer">Download Calypso ↗</a>
-      <a class="btn" href="https://github.com/Jackson4Rocks/calypso-linux" target="_blank" rel="noreferrer">Open GitHub ↗</a>
+    <div>
+      <div class="section-number">05 · PROJECT</div>
+      <h2 class="section-title">Built in the<br><span>open.</span></h2>
+      <div class="pixel-rule"></div>
     </div>
-    <div class="final-pills"><span>KDE Plasma</span><span>Hyprland</span><span>Arch based</span><span>Open source</span></div>
+    <p class="section-copy">This is a project you can actually look through: source, docs, downloads, artwork and community channels are all part of the same public story.</p>
+  </div>
+
+  <div class="community">
+    <article class="community-card reveal">
+      <div class="section-number">LINK PORT</div>
+      <h3>CALYPSO HUB</h3>
+      <p>Go where the project lives. Everything opens in a new tab except the local wiki.</p>
+      <div class="link-grid">
+        <a class="link" href="https://github.com/Jackson4Rocks/calypso-linux" target="_blank" rel="noreferrer"><span>GitHub source</span><span>↗</span></a>
+        <a class="link" href="https://sourceforge.net/projects/calypso-linux/files/" target="_blank" rel="noreferrer"><span>ISO downloads</span><span>↗</span></a>
+        <a class="link" href="./docs/"><span>Project wiki</span><span>→</span></a>
+        <a class="link" href="https://t.me/CalypsoLinux" target="_blank" rel="noreferrer"><span>Updates · @CalypsoLinux</span><span>↗</span></a>
+        <a class="link" href="https://t.me/CalypsoLinuxChat" target="_blank" rel="noreferrer"><span>Chat · @CalypsoLinuxChat</span><span>↗</span></a>
+      </div>
+    </article>
+
+    <article class="community-card reveal">
+      <div class="section-number">MAINTAINER</div>
+      <div class="maintainer" style="margin-top:16px">
+        <img src="https://github.com/Jackson4Rocks.png?size=256" alt="Leon Sony" loading="lazy">
+        <div><h4>Leon Sony</h4><small>Creator · Maintainer · Linux enthusiast</small></div>
+      </div>
+      <div class="maintainer-note">Calypso started as a hands-on way to learn Linux development at 15 and grew into a full project covering distro design, packaging, configuration, web design, documentation and release engineering.</div>
+      <div class="tags" style="margin-top:18px"><span class="tag accent">JACKSON_ROCKS</span><span class="tag">15</span><span class="tag">LINUX</span><span class="tag">INDEPENDENT</span></div>
+    </article>
   </div>
 </section>
+
+<section class="release">
+  <div class="release-inner reveal">
+    <div class="section-number">06 · GET CALYPSO</div>
+    <h2>Ready to <span>boot?</span></h2>
+    <p>Download the current ISO from SourceForge, inspect the source on GitHub, or jump into the wiki and see how the project fits together.</p>
+    <div class="release-actions">
+      <a class="btn primary" href="https://sourceforge.net/projects/calypso-linux/files/" target="_blank" rel="noreferrer">DOWNLOAD ISO ↘</a>
+      <a class="btn" href="https://github.com/Jackson4Rocks/calypso-linux" target="_blank" rel="noreferrer">SOURCE CODE ↗</a>
+      <a class="btn" href="./docs/">WIKI →</a>
+    </div>
+    <div class="release-meta"><span>KDE PLASMA</span><span>HYPRLAND FUTURE</span><span>ARCH BASED</span><span>OPEN SOURCE</span></div>
+  </div>
+</section>
+
 </main>
 
 <footer class="footer">
-  <span>© Calypso Linux · <strong>Fast + lean</strong></span>
+  <span>© CALYPSO LINUX · <strong>FAST + LEAN</strong></span>
   <div class="footer-links">
     <a href="https://github.com/Jackson4Rocks/calypso-linux" target="_blank" rel="noreferrer">GitHub</a>
     <a href="https://sourceforge.net/projects/calypso-linux/files/" target="_blank" rel="noreferrer">SourceForge</a>
-    <a href="./docs/">Docs</a>
+    <a href="./docs/">Wiki</a>
     <a href="https://t.me/CalypsoLinux" target="_blank" rel="noreferrer">Updates</a>
     <a href="https://t.me/CalypsoLinuxChat" target="_blank" rel="noreferrer">Chat</a>
   </div>
-  <span>Maintained by Jackson_Rocks</span>
+  <span>MAINTAINED BY JACKSON_ROCKS</span>
 </footer>
 </div>
 
 <script>
 (()=>{
   const reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  const progress=document.querySelector('.scroll-progress');
-  const glow=document.querySelector('.pointer-glow');
-  const menuBtn=document.getElementById('menuBtn');
-  const mobileNav=document.getElementById('mobileNav');
+  const progress=document.querySelector('.scrollbar');
+  const cursor=document.querySelector('.cursor-box');
+  const menu=document.getElementById('menu');
+  const mobile=document.getElementById('mobileNav');
 
-  const map=document.getElementById('pixelMap');
-  if(map){
-    for(let i=0;i<144;i++){
-      const cell=document.createElement('i');
-      cell.style.opacity=(.28+((i*17)%68)/100).toFixed(2);
-      map.appendChild(cell);
-    }
-  }
-
-  if(menuBtn&&mobileNav){
-    menuBtn.addEventListener('click',()=>{
-      const open=mobileNav.classList.toggle('open');
-      menuBtn.setAttribute('aria-expanded',open?'true':'false');
+  if(menu&&mobile){
+    menu.addEventListener('click',()=>{
+      const open=mobile.classList.toggle('open');
+      menu.setAttribute('aria-expanded',open?'true':'false');
     });
-    mobileNav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{
-      mobileNav.classList.remove('open');menuBtn.setAttribute('aria-expanded','false');
+    mobile.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{
+      mobile.classList.remove('open');menu.setAttribute('aria-expanded','false');
     }));
   }
 
   if(!reduce){
-    const onScroll=()=>{
+    addEventListener('scroll',()=>{
       const max=document.documentElement.scrollHeight-innerHeight;
       const p=max>0?scrollY/max:0;
       if(progress)progress.style.transform='scaleX('+p+')';
-    };
-    addEventListener('scroll',onScroll,{passive:true});onScroll();
-
-    if(glow){
+    },{passive:true});
+    if(cursor){
       addEventListener('pointermove',e=>{
-        glow.animate({left:e.clientX+'px',top:e.clientY+'px'},{duration:600,fill:'forwards',easing:'cubic-bezier(.2,.72,.25,1)'});
+        cursor.animate(
+          {left:e.clientX+'px',top:e.clientY+'px'},
+          {duration:180,fill:'forwards',easing:'steps(4,end)'}
+        );
       },{passive:true});
     }
-  }else if(progress){progress.style.display='none'}
-
-  document.querySelectorAll('.btn').forEach(btn=>{
-    btn.addEventListener('pointerdown',e=>{
-      const rect=btn.getBoundingClientRect();
-      const ripple=document.createElement('span');
-      ripple.className='ripple';
-      const size=Math.max(rect.width,rect.height);
-      ripple.style.width=size+'px';ripple.style.height=size+'px';
-      ripple.style.left=(e.clientX-rect.left-size/2)+'px';
-      ripple.style.top=(e.clientY-rect.top-size/2)+'px';
-      btn.appendChild(ripple);
-      setTimeout(()=>ripple.remove(),650);
-    });
-  });
+  }else{
+    if(progress)progress.style.display='none';
+  }
 
   const reveals=[...document.querySelectorAll('.reveal')];
-  if('IntersectionObserver' in window&&!reduce){
+  if('IntersectionObserver' in window && !reduce){
     const io=new IntersectionObserver(entries=>{
       entries.forEach(entry=>{
         if(entry.isIntersecting){
@@ -662,8 +662,11 @@ img,svg{display:block}
           io.unobserve(entry.target);
         }
       });
-    },{rootMargin:'0px 0px -8% 0px',threshold:.06});
-    reveals.forEach((el,i)=>{el.style.transitionDelay=Math.min(i,7)*55+'ms';io.observe(el)});
+    },{rootMargin:'0px 0px -7% 0px',threshold:.05});
+    reveals.forEach((el,i)=>{
+      el.style.transitionDelay=(Math.min(i,8)*45)+'ms';
+      io.observe(el);
+    });
   }else{
     reveals.forEach(el=>el.classList.add('visible'));
   }
@@ -671,11 +674,10 @@ img,svg{display:block}
   document.querySelectorAll('a[href^="#"]').forEach(link=>{
     link.addEventListener('click',e=>{
       const id=link.getAttribute('href');
-      if(!id||id==='#')return;
       const target=document.querySelector(id);
       if(target){
         e.preventDefault();
-        target.scrollIntoView({behavior:reduce?'auto':'smooth',block:'start'});
+        target.scrollIntoView({behavior:reduce?'auto':'smooth'});
       }
     });
   });
