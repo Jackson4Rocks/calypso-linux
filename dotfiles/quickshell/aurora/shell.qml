@@ -77,7 +77,7 @@ ShellRoot {
 
                                     Text {
                                         text: "CALYPSO"
-                                        color: theme.onSurface
+                                        color: theme.surfaceContent
                                         font.pixelSize: 11
                                         font.bold: true
                                         font.letterSpacing: 1.8
@@ -125,7 +125,7 @@ ShellRoot {
                                         Text {
                                             anchors.centerIn: parent
                                             text: modelData.name
-                                            color: modelData.focused ? theme.primaryContent : theme.onSurfaceVariant
+                                            color: modelData.focused ? theme.primaryContent : theme.surfaceContentVariant
                                             font.pixelSize: 10
                                             font.bold: modelData.focused
                                         }
@@ -151,7 +151,7 @@ ShellRoot {
                                 Text {
                                     width: 160
                                     text: Hyprland.activeToplevel ? Hyprland.activeToplevel.title : "CALYPSO"
-                                    color: theme.onSurfaceVariant
+                                    color: theme.surfaceContentVariant
                                     font.pixelSize: 10
                                     elide: Text.ElideRight
                                     horizontalAlignment: Text.AlignRight
@@ -172,7 +172,7 @@ ShellRoot {
 
                                 Text {
                                     text: Qt.formatDateTime(clock.date, "HH:mm")
-                                    color: theme.onSurface
+                                    color: theme.surfaceContent
                                     font.pixelSize: 11
                                     font.bold: true
                                 }
