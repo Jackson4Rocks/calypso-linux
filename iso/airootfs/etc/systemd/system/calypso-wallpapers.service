@@ -7,3 +7,6 @@ ConditionPathExists=/usr/local/bin/calypso-install-wallpapers
 [Service]
 Type=oneshot
 ExecStart=/usr/local/bin/calypso-install-wallpapers /usr/share/backgrounds/calypso/stock
+
+[Install]
+WantedBy=multi-user.target
