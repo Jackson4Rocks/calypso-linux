@@ -49,7 +49,11 @@ command -v sudo >/dev/null 2>&1 || die "sudo is required."
 ok "Arch package manager detected"
 
 step "Installing the Hyprland + Noctalia stack..."
-sudo pacman -S --needed   hyprland noctalia kitty yazi dolphin zsh fastfetch   playerctl brightnessctl grim slurp wl-clipboard jq curl
+if [[ "${CALYPSO_SKIP_PACKAGES:-0}" == "1" ]]; then
+  ok "Dependency installation delegated to setup.sh"
+else
+  sudo pacman -S --needed     hyprland noctalia kitty dolphin firefox zsh fastfetch     playerctl brightnessctl grim slurp wl-clipboard jq curl     xdg-desktop-portal xdg-desktop-portal-hyprland     pipewire wireplumber polkit polkit-gnome     power-profiles-daemon upower xorg-xwayland networkmanager
+fi
 ok "Official packages are ready"
 
 command -v noctalia >/dev/null 2>&1 || die "Noctalia was not installed successfully."
