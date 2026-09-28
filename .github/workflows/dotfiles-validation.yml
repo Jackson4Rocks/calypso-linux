@@ -4,10 +4,16 @@ on:
   push:
     paths:
       - "dotfiles/**"
+      - "setup.sh"
+      - "build.sh"
+      - "iso/packages.x86_64"
       - ".github/workflows/dotfiles-validation.yml"
   pull_request:
     paths:
       - "dotfiles/**"
+      - "setup.sh"
+      - "build.sh"
+      - "iso/packages.x86_64"
       - ".github/workflows/dotfiles-validation.yml"
 
 jobs:
@@ -16,6 +22,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+
+      - name: Validate complete Calypso setup
+        run: |
+          bash -n setup.sh
+          bash setup.sh --stage-iso
 
       - name: Validate Bash
         run: |
