@@ -75,11 +75,7 @@ hl.env("GDK_BACKEND", "wayland,x11")
 hl.env("SDL_VIDEODRIVER", "wayland")
 hl.env("MOZ_ENABLE_WAYLAND", "1")
 hl.env("ELECTRON_OZONE_PLATFORM_HINT", "auto")
-
--- Keep DMS on the dark Calypso theme instead of allowing an automatic
--- wallpaper recolor pass to overwrite the curated palette.
-hl.env("DMS_DISABLE_MATUGEN", "1")
-hl.env("DMS_DANKBAR_LAYER", "overlay")
+hl.env("XDG_MENU_PREFIX", "plasma-")
 
 hl.curve("calypsoExpressive", {
   type = "bezier",
