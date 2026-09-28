@@ -96,7 +96,7 @@ hl.animation({ leaf = "layers", enabled = true, speed = 7, bezier = "calypsoExpr
 hl.animation({ leaf = "workspaces", enabled = true, speed = 7, bezier = "calypsoExpressive", style = "slidefade" })
 
 local terminal = "kitty"
-local file_manager = "kitty -- yazi"
+local file_manager = "dolphin"
 local main_mod = "SUPER"
 local noctalia = "noctalia msg "
 
