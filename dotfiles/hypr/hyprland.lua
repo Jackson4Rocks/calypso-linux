@@ -1,8 +1,8 @@
 -- Calypso Linux — Material Expressive Hyprland
 -- Hyprland 0.55+ Lua configuration.
 --
--- The desktop shell is DankMaterialShell (DMS). DMS is started only by
--- Hyprland so the optional profile does not interfere with KDE Plasma.
+-- KDE Plasma remains the main Calypso desktop.
+-- This optional profile uses Noctalia v5 as the shell.
 
 hl.config({
   general = {
@@ -16,17 +16,18 @@ hl.config({
 
   decoration = {
     rounding = 18,
+    rounding_power = 2,
     active_opacity = 1.0,
     inactive_opacity = 0.94,
     fullscreen_opacity = 1.0,
     shadow = {
       enabled = true,
-      range = 24,
+      range = 20,
       render_power = 3,
     },
     blur = {
       enabled = true,
-      size = 7,
+      size = 6,
       passes = 2,
       new_optimizations = true,
       xray = false,
@@ -93,12 +94,13 @@ hl.animation({ leaf = "workspaces", enabled = true, speed = 7, bezier = "calypso
 local terminal = "kitty"
 local file_manager = "kitty -- yazi"
 local main_mod = "SUPER"
+local noctalia = "noctalia msg "
 
 local function exec(command)
   return hl.dsp.exec_cmd(command)
 end
 
--- Core app bindings.
+-- Applications and window controls.
 hl.bind(main_mod .. " + RETURN", exec(terminal), { description = "Open terminal" })
 hl.bind(main_mod .. " + E", exec(file_manager), { description = "Open file manager" })
 hl.bind(main_mod .. " + Q", hl.dsp.window.kill(), { description = "Close focused window" })
@@ -106,8 +108,8 @@ hl.bind(main_mod .. " + SHIFT + Q", hl.dsp.window.kill(), { description = "Kill 
 hl.bind(main_mod .. " + F", hl.dsp.window.fullscreen({ action = "toggle" }), { description = "Toggle fullscreen" })
 hl.bind(main_mod .. " + SHIFT + SPACE", hl.dsp.window.float({ action = "toggle" }), { description = "Toggle floating" })
 hl.bind(main_mod .. " + P", exec("hyprctl dispatch pseudo"), { description = "Toggle pseudotile" })
-hl.bind(main_mod .. " + TAB", exec("hyprctl dispatch cyclenext"), { description = "Cycle windows" })
-hl.bind(main_mod .. " + SHIFT + TAB", exec("hyprctl dispatch cyclenext prev"), { description = "Cycle windows backwards" })
+
+-- Focus and movement.
 hl.bind(main_mod .. " + LEFT", exec("hyprctl dispatch movefocus l"), { description = "Focus left" })
 hl.bind(main_mod .. " + RIGHT", exec("hyprctl dispatch movefocus r"), { description = "Focus right" })
 hl.bind(main_mod .. " + UP", exec("hyprctl dispatch movefocus u"), { description = "Focus up" })
@@ -116,58 +118,91 @@ hl.bind(main_mod .. " + SHIFT + LEFT", exec("hyprctl dispatch movewindow l"), { 
 hl.bind(main_mod .. " + SHIFT + RIGHT", exec("hyprctl dispatch movewindow r"), { description = "Move window right" })
 hl.bind(main_mod .. " + SHIFT + UP", exec("hyprctl dispatch movewindow u"), { description = "Move window up" })
 hl.bind(main_mod .. " + SHIFT + DOWN", exec("hyprctl dispatch movewindow d"), { description = "Move window down" })
+hl.bind(main_mod .. " + TAB", exec("hyprctl dispatch cyclenext"), { description = "Cycle windows" })
+hl.bind("ALT + TAB", exec(noctalia .. "window-switcher"), { description = "Open Noctalia window switcher" })
 
--- DMS: Material 3 shell controls.
-hl.bind(main_mod .. " + SPACE", exec("dms ipc call spotlight toggle"), { description = "Open launcher" })
-hl.bind(main_mod .. " + V", exec("dms ipc call clipboard toggle"), { description = "Open clipboard history" })
-hl.bind(main_mod .. " + N", exec("dms ipc call notifications toggle"), { description = "Open notifications" })
-hl.bind(main_mod .. " + C", exec("dms ipc call control-center toggle"), { description = "Open quick settings" })
-hl.bind(main_mod .. " + X", exec("dms ipc call powermenu toggle"), { description = "Open power menu" })
-hl.bind(main_mod .. " + COMMA", exec("dms ipc call settings toggle"), { description = "Open shell settings" })
-hl.bind(main_mod .. " + SHIFT + K", exec("dms ipc call keybinds toggle hyprland"), { description = "Show keybinds" })
-hl.bind(main_mod .. " + SHIFT + R", exec("hyprctl reload"), { description = "Reload Hyprland" })
-hl.bind(main_mod .. " + SHIFT + W", exec("dms ipc call file browse wallpaper"), { description = "Open wallpaper picker" })
+-- Noctalia panels.
+hl.bind(main_mod .. " + SPACE", exec(noctalia .. "panel-toggle launcher"), { description = "Open launcher" })
+hl.bind(main_mod .. " + C", exec(noctalia .. "panel-toggle control-center"), { description = "Open Control Center" })
+hl.bind(main_mod .. " + V", exec(noctalia .. "panel-toggle clipboard"), { description = "Open clipboard history" })
+hl.bind(main_mod .. " + N", exec(noctalia .. "panel-toggle control-center notifications"), { description = "Open notifications" })
+hl.bind(main_mod .. " + W", exec(noctalia .. "panel-toggle wallpaper"), { description = "Open wallpaper picker" })
+hl.bind(main_mod .. " + X", exec(noctalia .. "panel-toggle session"), { description = "Open session menu" })
+hl.bind(main_mod .. " + COMMA", exec(noctalia .. "settings-toggle"), { description = "Open Noctalia settings" })
 
+-- Workspaces: use Hyprland's native workspace dispatcher directly.
+-- This avoids shell-specific workspace failures and keeps switching available
+-- even when Noctalia is temporarily closed.
 for i = 1, 9 do
-  hl.bind(main_mod .. " + " .. i, exec("hyprctl dispatch workspace " .. i), {
+  hl.bind(main_mod .. " + " .. i, hl.workspace(i), {
     description = "Switch to workspace " .. i,
   })
-  hl.bind(main_mod .. " + SHIFT + " .. i, exec("hyprctl dispatch movetoworkspace " .. i), {
+  hl.bind(main_mod .. " + SHIFT + " .. i, hl.dsp.window.move({
+    workspace = i,
+    follow = false,
+  }), {
     description = "Move window to workspace " .. i,
   })
 end
 
-hl.bind(main_mod .. " + 0", exec("hyprctl dispatch workspace 10"), { description = "Switch to workspace 10" })
-hl.bind(main_mod .. " + SHIFT + 0", exec("hyprctl dispatch movetoworkspace 10"), { description = "Move window to workspace 10" })
+hl.bind(main_mod .. " + 0", hl.workspace(10), {
+  description = "Switch to workspace 10",
+})
+hl.bind(main_mod .. " + SHIFT + 0", hl.dsp.window.move({
+  workspace = 10,
+  follow = false,
+}), {
+  description = "Move window to workspace 10",
+})
 
 -- Scratchpad.
-hl.bind(main_mod .. " + S", exec("hyprctl dispatch togglespecialworkspace magic"), {
+hl.bind(main_mod .. " + S", hl.dsp.workspace.toggle_special("magic"), {
   description = "Toggle scratchpad",
 })
-hl.bind(main_mod .. " + SHIFT + S", exec("hyprctl dispatch movetoworkspace special:magic"), {
+hl.bind(main_mod .. " + SHIFT + S", hl.dsp.window.move({
+  workspace = "special:magic",
+  follow = false,
+}), {
   description = "Send window to scratchpad",
 })
 
--- Hardware controls.
-hl.bind("XF86AudioRaiseVolume", exec("dms ipc call audio increment 5"), { repeating = true })
-hl.bind("XF86AudioLowerVolume", exec("dms ipc call audio decrement 5"), { repeating = true })
-hl.bind("XF86AudioMute", exec("dms ipc call audio mute"), { locked = true })
-hl.bind("XF86AudioMicMute", exec("dms ipc call mic mute"), { locked = true })
-hl.bind("XF86MonBrightnessUp", exec("dms ipc call brightness increment 5"), { repeating = true })
-hl.bind("XF86MonBrightnessDown", exec("dms ipc call brightness decrement 5"), { repeating = true })
-hl.bind("XF86AudioPlay", exec("playerctl play-pause"), { locked = true })
-hl.bind("XF86AudioNext", exec("playerctl next"), { locked = true })
-hl.bind("XF86AudioPrev", exec("playerctl previous"), { locked = true })
+-- Media and hardware.
+hl.bind("XF86AudioRaiseVolume", exec(noctalia .. "volume-up"), { repeating = true })
+hl.bind("XF86AudioLowerVolume", exec(noctalia .. "volume-down"), { repeating = true })
+hl.bind("XF86AudioMute", exec(noctalia .. "volume-mute"), { locked = true })
+hl.bind("XF86MonBrightnessUp", exec(noctalia .. "brightness-up"), { repeating = true })
+hl.bind("XF86MonBrightnessDown", exec(noctalia .. "brightness-down"), { repeating = true })
+hl.bind("XF86AudioPlay", exec(noctalia .. "media toggle"), { locked = true })
+hl.bind("XF86AudioNext", exec(noctalia .. "media next"), { locked = true })
+hl.bind("XF86AudioPrev", exec(noctalia .. "media previous"), { locked = true })
 
--- Wayland screenshots.
-hl.bind("PRINT", exec("sh -lc 'grim -g \"$(slurp)\" - | wl-copy'"), {
-  description = "Screenshot region to clipboard",
+-- Screenshots.
+hl.bind("PRINT", exec(noctalia .. "screenshot-region"), {
+  description = "Screenshot region",
 })
-hl.bind(main_mod .. " + PRINT", exec("sh -lc 'grim - | wl-copy'"), {
-  description = "Screenshot full screen to clipboard",
+hl.bind(main_mod .. " + PRINT", exec(noctalia .. "screenshot-fullscreen"), {
+  description = "Screenshot focused monitor",
+})
+
+-- Noctalia integration recommended by its Hyprland documentation.
+hl.window_rule({
+  match = { class = "dev.noctalia.Noctalia" },
+  float = true,
+  size = { 1080, 920 },
+})
+
+hl.layer_rule({
+  name = "noctalia",
+  match = {
+    namespace = "^noctalia-(bar-.+|notification|dock|panel|attached-panel|osd|window-switcher)$",
+  },
+  no_anim = true,
+  ignore_alpha = 0.5,
+  blur = true,
+  blur_popups = true,
 })
 
 hl.on("hyprland.start", function()
   hl.exec_cmd("dbus-update-activation-environment --systemd --all")
-  hl.exec_cmd("dms run -d")
+  hl.exec_cmd("noctalia")
 end)
