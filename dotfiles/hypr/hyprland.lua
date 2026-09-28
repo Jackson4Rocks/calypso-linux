@@ -122,8 +122,8 @@ hl.bind("SUPER + mouse:272", hl.dsp.window.drag(), {
   mouse = true,
 })
 
--- Right mouse button + drag interactively resizes the active window.
-hl.bind("mouse:273", hl.dsp.window.resize(), {
+-- SUPER + right mouse button + drag interactively resizes the active window.
+hl.bind("SUPER + mouse:273", hl.dsp.window.resize(), {
   mouse = true,
 })
 
