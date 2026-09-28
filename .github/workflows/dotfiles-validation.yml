@@ -22,24 +22,35 @@ jobs:
           bash -n dotfiles/scripts/install.sh
           bash -n dotfiles/scripts/calypso-wallpaper
           bash -n dotfiles/scripts/verify.sh
+          bash -n dotfiles/scripts/ci-noctalia-smoke.sh
 
-      - name: Validate JSON
+      - name: Validate Noctalia TOML and Material 3 palette
         run: |
           python3 - <<'PY'
           import json
+          import tomllib
           from pathlib import Path
-          theme = json.loads(Path("dotfiles/dms/calypso-expressive.json").read_text())
+
+          config = tomllib.loads(Path("dotfiles/noctalia/config.toml").read_text())
+          theme = json.loads(Path("dotfiles/noctalia/palettes/CalypsoEmerald.json").read_text())
+
           required = {
-              "primary", "primaryText", "primaryContainer", "secondary",
-              "surface", "surfaceText", "surfaceVariant", "surfaceVariantText",
-              "surfaceTint", "background", "backgroundText", "outline",
-              "surfaceContainerLowest", "surfaceContainerLow",
-              "surfaceContainer", "surfaceContainerHigh", "surfaceContainerHighest"
+              "mPrimary", "mOnPrimary", "mSecondary", "mOnSecondary",
+              "mTertiary", "mOnTertiary", "mError", "mOnError",
+              "mSurface", "mOnSurface", "mSurfaceVariant", "mOnSurfaceVariant",
+              "mOutline", "mShadow", "mHover", "mOnHover"
           }
+
           for mode in ("dark", "light"):
               missing = sorted(required - set(theme.get(mode, {})))
-              assert not missing, f"{mode} theme missing: {', '.join(missing)}"
-          print("theme JSON + Material 3 color roles: valid")
+              assert not missing, f"{mode} palette missing: {', '.join(missing)}"
+
+          assert config["theme"]["source"] == "custom"
+          assert config["theme"]["custom_palette"] == "CalypsoEmerald"
+          assert config["lockscreen"]["enabled"] is True
+          assert config["lockscreen_widgets"]["enabled"] is True
+
+          print("Noctalia TOML + Material 3 palette + lockscreen config: valid")
           PY
 
       - name: Validate Lua syntax
@@ -48,17 +59,17 @@ jobs:
           sudo apt-get install -y lua5.4
           luac5.4 -p dotfiles/hypr/hyprland.lua
 
-  dms-smoke:
-    name: DMS Wayland smoke test
+  noctalia-smoke:
+    name: Noctalia Wayland smoke test
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
 
-      - name: Smoke-test DankMaterialShell under headless Wayland
+      - name: Start Noctalia under headless Wayland
         run: |
           docker run --rm             -v "$GITHUB_WORKSPACE:/repo:ro"             archlinux:latest             bash -lc '
               set -euo pipefail
-              pacman -Sy --noconfirm dms-shell dms-shell-hyprland weston dbus shadow
+              pacman -Sy --noconfirm noctalia weston dbus
               useradd --create-home --uid 1000 --shell /bin/bash calypso-ci
-              runuser -u calypso-ci -- bash /repo/dotfiles/scripts/ci-dms-smoke.sh
+              runuser -u calypso-ci -- bash /repo/dotfiles/scripts/ci-noctalia-smoke.sh
             '
