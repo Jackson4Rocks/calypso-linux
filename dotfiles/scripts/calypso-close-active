@@ -1,18 +1,28 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-# Noctalia Settings is a regular toplevel window. Do not pass it through
-# Hyprland killactive: on affected Noctalia v5 builds, closing that
-# window can terminate the shell process as well.
+# This helper is only meaningful inside a Hyprland session.
+# Calypso's KDE Plasma desktop has its own window-management shortcuts.
+
+if [[ -z "${HYPRLAND_INSTANCE_SIGNATURE:-}" ]]; then
+  printf '%s\n' "calypso-close-active: not running inside Hyprland; nothing to close." >&2
+  exit 0
+fi
 
 command -v hyprctl >/dev/null 2>&1 || exit 1
-command -v jq >/dev/null 2>&1 || exit 1
 
-active="$(hyprctl activewindow -j 2>/dev/null || printf "{}")"
-class="$(jq -r '.class // ""' <<<"$active")"
+active="$(hyprctl activewindow -j 2>/dev/null || printf '{}')"
+if command -v jq >/dev/null 2>&1; then
+  class="$(jq -r '.class // ""' <<<"$active")"
+else
+  class=""
+fi
 
-if [[ "$class" == "dev.noctalia.Noctalia" ]]; then
+# Noctalia Settings is a real Hyprland toplevel window. Close it through
+# Noctalia IPC so the shell itself is not affected on affected v5 builds.
+if [[ "$class" == "dev.noctalia.Noctalia" ]] && command -v noctalia >/dev/null 2>&1; then
   exec noctalia msg settings-close
 fi
 
-exec hyprctl dispatch killactive
+# Use Hyprland's current Lua dispatcher for a graceful close.
+exec hyprctl dispatch 'hl.dsp.window.close()'
