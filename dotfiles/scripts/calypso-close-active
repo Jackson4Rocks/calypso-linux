@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+# Noctalia Settings is a regular toplevel window. Do not pass it through
+# Hyprland killactive: on affected Noctalia v5 builds, closing that
+# window can terminate the shell process as well.
+
+command -v hyprctl >/dev/null 2>&1 || exit 1
+command -v jq >/dev/null 2>&1 || exit 1
+
+active="$(hyprctl activewindow -j 2>/dev/null || printf "{}")"
+class="$(jq -r '.class // ""' <<<"$active")"
+
+if [[ "$class" == "dev.noctalia.Noctalia" ]]; then
+  exec noctalia msg settings-close
+fi
+
+exec hyprctl dispatch killactive
