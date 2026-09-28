@@ -10,10 +10,10 @@ if [[ ! -f "$WALL" ]]; then
   exit 1
 fi
 
-command -v dms >/dev/null 2>&1 || {
-  printf 'DankMaterialShell is not installed or not on PATH.\n' >&2
+command -v noctalia >/dev/null 2>&1 || {
+  printf 'Noctalia is not installed or not on PATH.\n' >&2
   exit 1
 }
 
-dms ipc call wallpaper set "$WALL"
+noctalia msg wallpaper-set "$WALL"
 printf 'Calypso wallpaper set: %s\n' "$WALL"
