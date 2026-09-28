@@ -20,6 +20,7 @@ jobs:
       - name: Validate Bash
         run: |
           bash -n dotfiles/scripts/install.sh
+          bash -n dotfiles/scripts/uninstall.sh
           bash -n dotfiles/scripts/calypso-wallpaper
           bash -n dotfiles/scripts/calypso-close-active
           bash -n dotfiles/scripts/verify.sh
