@@ -28,8 +28,18 @@ jobs:
           python3 - <<'PY'
           import json
           from pathlib import Path
-          json.loads(Path("dotfiles/dms/calypso-expressive.json").read_text())
-          print("theme JSON: valid")
+          theme = json.loads(Path("dotfiles/dms/calypso-expressive.json").read_text())
+          required = {
+              "primary", "primaryText", "primaryContainer", "secondary",
+              "surface", "surfaceText", "surfaceVariant", "surfaceVariantText",
+              "surfaceTint", "background", "backgroundText", "outline",
+              "surfaceContainerLowest", "surfaceContainerLow",
+              "surfaceContainer", "surfaceContainerHigh", "surfaceContainerHighest"
+          }
+          for mode in ("dark", "light"):
+              missing = sorted(required - set(theme.get(mode, {})))
+              assert not missing, f"{mode} theme missing: {', '.join(missing)}"
+          print("theme JSON + Material 3 color roles: valid")
           PY
 
       - name: Validate Lua syntax
