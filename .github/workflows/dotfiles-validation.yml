@@ -48,6 +48,7 @@ jobs:
         run: |
           docker run --rm             -v "$GITHUB_WORKSPACE:/repo:ro"             archlinux:latest             bash -lc '
               set -euo pipefail
-              pacman -Sy --noconfirm dms-shell dms-shell-hyprland weston
-              bash /repo/dotfiles/scripts/ci-dms-smoke.sh
+              pacman -Sy --noconfirm dms-shell dms-shell-hyprland weston dbus shadow
+              useradd --create-home --uid 1000 --shell /bin/bash calypso-ci
+              runuser -u calypso-ci -- bash /repo/dotfiles/scripts/ci-dms-smoke.sh
             '
