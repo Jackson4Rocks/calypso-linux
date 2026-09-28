@@ -76,6 +76,14 @@ To verify the profile later:
 
     bash scripts/verify.sh
 
+## Uninstallation
+
+To remove the Calypso configuration without uninstalling system packages:
+
+    bash scripts/uninstall.sh
+
+The uninstaller stops Noctalia, restores the newest backup created by the installer when one exists, removes Calypso helper commands and the bundled wallpaper copy, and leaves Hyprland/Noctalia packages and KDE Plasma configuration installed. Backups are kept under `~/.local/state/calypso-dotfiles/backup/`.
+
 ## Useful keybindings
 
 | Key | Action |
