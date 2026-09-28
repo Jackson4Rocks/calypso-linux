@@ -129,6 +129,16 @@ else
   warn "No active Wayland/DMS session; live shell test skipped"
 fi
 
+if command -v dms >/dev/null 2>&1; then
+  step "Running DMS diagnostics..."
+  doctor_json="$(dms doctor -j 2>/dev/null || true)"
+  if [[ -n "$doctor_json" ]] && jq -e '.summary.errors == 0' >/dev/null 2>&1 <<<"$doctor_json"; then
+    ok "DMS doctor reports zero critical errors"
+  else
+    warn "DMS doctor reported errors or returned no JSON; inspect with 'dms doctor -v'"
+  fi
+fi
+
 printf '\n%s%sCalypso Material Expressive is installed.%s\n' "$GREEN" "$BOLD" "$RESET"
 printf '%sShell:%s DankMaterialShell\n' "$DIM" "$RESET"
 printf '%sTheme:%s Calypso Emerald Expressive\n' "$DIM" "$RESET"
