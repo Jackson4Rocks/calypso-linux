@@ -5,6 +5,7 @@ ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 REPO="$(cd "$ROOT/.." && pwd)"
 CFG="${XDG_CONFIG_HOME:-$HOME/.config}"
 NOCTALIA="$CFG/noctalia"
+NOCTALIA_STATE="${XDG_STATE_HOME:-$HOME/.local/state}/noctalia"
 BACKUP="$HOME/.local/state/calypso-dotfiles/backup/$(date +%Y%m%d-%H%M%S)"
 LOG="$HOME/.local/state/calypso-dotfiles/logs/install-$(date +%Y%m%d-%H%M%S).log"
 
@@ -60,7 +61,7 @@ backup "$NOCTALIA/palettes/CalypsoEmerald.json"
 backup "$NOCTALIA_STATE/settings.toml"
 ok "Backup: $BACKUP"
 
-mkdir -p   "$CFG/hypr"   "$NOCTALIA/palettes"   "$HOME/.local/bin"   "$HOME/.local/share/calypso"
+mkdir -p   "$CFG/hypr"   "$NOCTALIA/palettes"   "$NOCTALIA_STATE"   "$HOME/.local/bin"   "$HOME/.local/share/calypso"
 
 step "Installing Calypso Hyprland configuration..."
 install -m 0644 "$ROOT/hypr/hyprland.lua" "$CFG/hypr/hyprland.lua"
@@ -90,6 +91,7 @@ ok "Wallpaper helper installed"
 step "Running local validation..."
 bash -n "$ROOT/scripts/install.sh"
 bash -n "$ROOT/scripts/calypso-wallpaper"
+bash -n "$ROOT/scripts/calypso-close-active"
 jq empty "$ROOT/noctalia/palettes/CalypsoEmerald.json"
 
 if command -v luac >/dev/null 2>&1; then
