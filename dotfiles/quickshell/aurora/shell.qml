@@ -125,7 +125,7 @@ ShellRoot {
                                         Text {
                                             anchors.centerIn: parent
                                             text: modelData.name
-                                            color: modelData.focused ? theme.onPrimaryContainer : theme.onSurfaceVariant
+                                            color: modelData.focused ? theme.primaryContent : theme.onSurfaceVariant
                                             font.pixelSize: 10
                                             font.bold: modelData.focused
                                         }
