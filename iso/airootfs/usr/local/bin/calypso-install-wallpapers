@@ -24,8 +24,10 @@ download() {
     fi
 }
 
-download "https://files.enderman.ch/wallpapers/Aurora.jpg" "Aurora.jpg"
-download "https://files.enderman.ch/wallpapers/Deep%20Forest.jpg" "Deep Forest.jpg"
-download "https://files.enderman.ch/wallpapers/Evening%20Mountain.jpg" "Evening Mountain.jpg"
-download "https://files.enderman.ch/wallpapers/Night%20Mountains.png" "Night Mountains.png"
-download "https://files.enderman.ch/wallpapers/Starry%20Horizon.jpg" "Starry Horizon.jpg"
+while IFS= read -r wallpaper || [ -n "$wallpaper" ]; do
+    case "$wallpaper" in
+        ""|#*) continue ;;
+    esac
+    encoded="${wallpaper// /%20}"
+    download "https://files.enderman.ch/wallpapers/${encoded}" "$wallpaper"
+done < /usr/share/calypso/enderman-wallpapers.txt
