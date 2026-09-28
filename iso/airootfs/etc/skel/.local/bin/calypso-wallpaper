@@ -4,7 +4,23 @@ set -euo pipefail
 WALL="${1:-}"
 
 if [[ -z "$WALL" ]]; then
-  WALL="$(find "$HOME/Pictures/wallpapers" -type f \( -iname '*.png' -o -iname '*.jpg' -o -iname '*.jpeg' -o -iname '*.webp' \) 2>/dev/null | fuzzel --dmenu --prompt='Wallpaper > ' | head -n1 || true)"
+  SEARCH_DIRS=(
+    "$HOME/.local/share/calypso/wallpapers"
+    "/usr/share/backgrounds/calypso/stock"
+    "$HOME/Pictures/wallpapers"
+  )
+
+  FILES=""
+  for dir in "${SEARCH_DIRS[@]}"; do
+    if [[ -d "$dir" ]]; then
+      while IFS= read -r file; do
+        FILES+="$file"
+        FILES+=$'\n'
+      done < <(find "$dir" -type f \( -iname '*.png' -o -iname '*.jpg' -o -iname '*.jpeg' -o -iname '*.webp' -o -iname '*.svg' \) 2>/dev/null)
+    fi
+  done
+
+  WALL="$(printf "%s" "$FILES" | sed '/^$/d' | sort -u | fuzzel --dmenu --prompt='Wallpaper > ' | head -n1 || true)"
 fi
 
 if [[ -z "$WALL" ]]; then
