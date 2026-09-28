@@ -55,7 +55,7 @@ install_system() {
 
   sudo pacman -S --needed "${PROFILE_PACKAGES[@]}"
 
-  bash "${ROOT_DIR}/dotfiles/scripts/install.sh"
+  CALYPSO_SKIP_PACKAGES=1 bash "${ROOT_DIR}/dotfiles/scripts/install.sh"
 }
 
 stage_iso() {
