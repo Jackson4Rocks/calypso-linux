@@ -137,7 +137,7 @@ footer strong{color:#7fe8c3}
 <div class="hero-grid">
 <article class="hero-card"><small>BASE</small><strong>Arch Linux</strong><p>Calypso builds on Arch while shaping its own desktop, artwork, and project structure.</p></article>
 <article class="hero-card"><small>FOCUS</small><strong>Fast + lean</strong><p>A focused system philosophy: keep the useful parts, avoid unnecessary clutter.</p></article>
-<article class="hero-card"><small>WORKFLOW</small><strong>Your choice</strong><p>KDE Plasma is central, with Hyprland available for people who prefer a different window-management style.</p></article>
+<article class="hero-card"><small>WORKFLOW</small><strong>Your choice</strong><p>KDE Plasma and Hyprland are both shipped desktop experiences, with Noctalia providing the Hyprland shell.</p></article>
 </div>
 </section>
 
@@ -148,7 +148,7 @@ footer strong{color:#7fe8c3}
 </div>
 <div class="fact-grid">
 <div class="fact"><strong>Fast + lean</strong><span>Keep the system focused on the essentials instead of treating extra software as a feature.</span></div>
-<div class="fact"><strong>Choice without clutter</strong><span>Desktop choices should remain choices. Optional paths should not overpower the main experience.</span></div>
+<div class="fact"><strong>Choice without clutter</strong><span>Desktop choices stay distinct: KDE Plasma for a full desktop workflow, Hyprland + Noctalia for a keyboard-first tiling workflow.</span></div>
 <div class="fact"><strong>One visual language</strong><span>Branding, wallpapers, icons, documentation, and the website use the same emerald-and-obsidian direction.</span></div>
 <div class="fact"><strong>Open development</strong><span>The public repository contains the project layers, making the distro understandable and inspectable.</span></div>
 </div>
@@ -171,28 +171,28 @@ footer strong{color:#7fe8c3}
 <section class="section" id="desktop">
 <div class="section-head">
 <div><div class="kicker">03 · DESKTOP</div><h2>A place to start,<br>not a box.</h2></div>
-<p class="intro">Calypso keeps the desktop layer flexible. KDE Plasma forms the main environment, while users who prefer tiling and keyboard-driven interaction can take the optional Hyprland route.</p>
+<p class="intro">Calypso ships two desktop experiences. KDE Plasma provides the full traditional desktop environment, while Hyprland provides a keyboard-first tiling workflow with Noctalia.</p>
 </div>
 <div class="choice-note">The important part is the choice itself: Calypso's identity does not depend on forcing every user into the same workflow.</div>
 <div class="cards">
 <article class="card"><div class="kicker">MAIN DESKTOP</div><h3>KDE Plasma</h3><p>The broad, configurable desktop layer used for the primary Calypso experience, including panels, settings, applications, accessibility, and normal graphical workflows.</p></article>
-<article class="card"><div class="kicker">OPTIONAL WINDOW MANAGEMENT</div><h3>Hyprland</h3><p>An optional path for users who enjoy tiling, keyboard-driven interaction, and deeper compositor-level control. It remains separate so it does not define the whole distribution.</p></article>
+<article class="card"><div class="kicker">SECOND DESKTOP</div><h3>Hyprland</h3><p>A shipped desktop experience for users who enjoy tiling, keyboard-driven interaction, and deeper compositor-level control.</p></article>
 </div>
 </section>
 
 <section class="section" id="hyprland">
 <div class="section-head">
-<div><div class="kicker">04 · OPTIONAL HYPRLAND</div><h2>What lives<br>in dotfiles.</h2></div>
-<p class="intro">The Hyprland side of the project is maintained separately under <strong>dotfiles/</strong>. It can evolve faster than the core desktop without changing what Calypso is at its center.</p>
+<div><div class="kicker">04 · HYPRLAND + NOCTALIA</div><h2>What lives<br>in dotfiles.</h2></div>
+<p class="intro">The Hyprland desktop profile is maintained under <strong>dotfiles/</strong>, where its compositor settings, shell integration, keybindings, wallpapers, and desktop behavior are defined.</p>
 </div>
 <div class="cards">
 <article class="card"><div class="kicker">COMPOSITOR</div><h3>Hyprland</h3><p>Window rules, keybindings, workspaces, focus behavior, monitor configuration, and compositor preferences.</p></article>
-<article class="card"><div class="kicker">DESKTOP SHELL</div><h3>Noctalia</h3><p>The optional profile uses Noctalia as its Wayland shell, styled with Calypso's dark emerald Material 3-inspired palette and lock screen.</p></article>
+<article class="card"><div class="kicker">DESKTOP SHELL</div><h3>Noctalia</h3><p>Noctalia is the Wayland desktop shell used with Hyprland, styled with Calypso's dark emerald Material 3-inspired palette, lock screen, panels, launcher, notifications, and system controls.</p></article>
 <article class="card"><div class="kicker">THEMING</div><h3>Matugen</h3><p>Wallpaper-derived color generation can feed the shell and supporting applications for a unified look.</p></article>
-<article class="card"><div class="kicker">SUPPORTING TOOLS</div><h3>Utilities</h3><p>Depending on the configuration, the optional workflow can also include Kitty, Fastfetch, Fuzzel, Yazi, Hyprpaper, and Zsh.</p></article>
+<article class="card"><div class="kicker">SUPPORTING TOOLS</div><h3>Utilities</h3><p>The Hyprland profile includes the supporting desktop tools used by Calypso, including Kitty, Dolphin, Fastfetch, Zsh, player controls, screenshots, and the Calypso wallpaper system.</p></article>
 </div>
 <div class="note-list">
-<div class="note"><strong>Configuration boundary</strong><p>Hyprland configuration is kept separate from the KDE-centered base experience.</p></div>
+<div class="note"><strong>Configuration boundary</strong><p>Hyprland configuration is kept organized under dotfiles while remaining part of the Calypso desktop offering.</p></div>
 <div class="note"><strong>Why separate it?</strong><p>It lets the power-user layer evolve without making its preferences mandatory for everyone else.</p></div>
 </div>
 </section>
@@ -207,7 +207,7 @@ footer strong{color:#7fe8c3}
 <thead><tr><th>Path</th><th>What it contains</th><th>Role</th></tr></thead>
 <tbody>
 <tr><td>iso/</td><td>Archiso profile, packages, boot entries, system defaults, artwork, and live-environment files.</td><td>Distribution image</td></tr>
-<tr><td>dotfiles/</td><td>Optional Hyprland configuration and supporting user configuration.</td><td>Optional desktop layer</td></tr>
+<tr><td>dotfiles/</td><td>Hyprland and Noctalia configuration plus supporting user configuration.</td><td>Optional desktop layer</td></tr>
 <tr><td>assets/</td><td>Website artwork, logos, and supporting visual resources.</td><td>Project identity</td></tr>
 <tr><td>docs/</td><td>This wiki and its published documentation page.</td><td>Reference</td></tr>
 <tr><td>index.html</td><td>Main Calypso Linux website.</td><td>Public landing page</td></tr>
