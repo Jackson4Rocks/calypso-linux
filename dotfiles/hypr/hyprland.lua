@@ -163,7 +163,7 @@ for i = 1, 9 do
   hl.bind(main_mod .. " + " .. i, hl.dsp.focus({ workspace = i }), {
     description = "Switch to workspace " .. i,
   })
-  hl.bind(main_mod .. " + SHIFT + " .. i, hl.dsp.window.move({ workspace = i, follow = false }), {
+  hl.bind(main_mod .. " + SHIFT + " .. i, hl.dsp.window.move({ workspace = i, follow = true }), {
     description = "Move window to workspace " .. i,
   })
 end
@@ -171,7 +171,7 @@ end
 hl.bind(main_mod .. " + 0", hl.dsp.focus({ workspace = 10 }), {
   description = "Switch to workspace 10",
 })
-hl.bind(main_mod .. " + SHIFT + 0", hl.dsp.window.move({ workspace = 10, follow = false }), {
+hl.bind(main_mod .. " + SHIFT + 0", hl.dsp.window.move({ workspace = 10, follow = true }), {
   description = "Move window to workspace 10",
 })
 
