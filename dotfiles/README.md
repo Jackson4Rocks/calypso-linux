@@ -4,6 +4,8 @@ This directory contains the optional Hyprland profile for Calypso Linux.
 
 **KDE Plasma remains the main Calypso desktop.** This profile is for users who want a tiling, keyboard-driven Wayland workflow.
 
+The keybindings in this profile are Hyprland-only. When KDE Plasma is running, there is no active Hyprland instance, so `hyprctl` cannot inspect or control the compositor and these `SUPER`/`ALT` bindings are not present. KDE's own shortcut system remains in control.
+
 ## Shell choice
 
 The profile uses **Noctalia** as the desktop shell.
@@ -91,7 +93,7 @@ The uninstaller stops Noctalia, restores the newest backup created by the instal
 | **SUPER + Enter** | Open terminal |
 | **SUPER + E** | Open Yazi in Kitty |
 | **SUPER + Space** | Open Noctalia launcher |
-| **SUPER + C** | Open Control Center |
+| **SUPER + S** | Open Control Center |
 | **SUPER + V** | Clipboard history |
 | **SUPER + W** | Wallpaper picker |
 | **SUPER + X** | Session menu |
@@ -101,7 +103,7 @@ The uninstaller stops Noctalia, restores the newest backup created by the instal
 | **SUPER + Tab** | Cycle windows |
 | **SUPER + 1…0** | Switch workspace |
 | **SUPER + Shift + 1…0** | Move window to workspace |
-| **SUPER + Shift + R** | Reload Hyprland |
+| **SUPER + Shift + R** | Reload Noctalia configuration |
 | **Print** | Noctalia screenshot region |
 | **SUPER + Print** | Noctalia screenshot full screen |
 
