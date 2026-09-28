@@ -49,7 +49,7 @@ command -v sudo >/dev/null 2>&1 || die "sudo is required."
 ok "Arch package manager detected"
 
 step "Installing the Hyprland + Noctalia stack..."
-sudo pacman -S --needed   hyprland noctalia kitty yazi zsh fastfetch   playerctl brightnessctl grim slurp wl-clipboard jq
+sudo pacman -S --needed   hyprland noctalia kitty yazi dolphin zsh fastfetch   playerctl brightnessctl grim slurp wl-clipboard jq curl
 ok "Official packages are ready"
 
 command -v noctalia >/dev/null 2>&1 || die "Noctalia was not installed successfully."
@@ -75,13 +75,33 @@ step "Installing the Noctalia configuration..."
 install -m 0644 "$ROOT/noctalia/config.toml" "$NOCTALIA/config.toml"
 ok "Noctalia configuration installed"
 
-step "Installing the Calypso wallpaper..."
+step "Installing the Calypso wallpaper collection..."
+mkdir -p "$HOME/.local/share/calypso/wallpapers"
 if [[ -f "$REPO/assets/calypso-hero.webp" ]]; then
-  install -m 0644 "$REPO/assets/calypso-hero.webp"     "$HOME/.local/share/calypso/CALYPSO-wallpaper.webp"
-  ok "Bundled wallpaper installed"
+  install -m 0644 "$REPO/assets/calypso-hero.webp" "$HOME/.local/share/calypso/CALYPSO-wallpaper.webp"
+  ok "Bundled Calypso wallpaper installed"
 else
-  warn "Bundled wallpaper asset not found; existing wallpaper is left untouched"
+  warn "Bundled Calypso wallpaper asset not found; keeping the collection only"
 fi
+
+WALLPAPER_DIR="$HOME/.local/share/calypso/wallpapers"
+WALLPAPER_LIST="$ROOT/wallpapers/enderman-curated.txt"
+BASE_URL="https://files.enderman.ch/wallpapers"
+
+while IFS= read -r wallpaper || [[ -n "$wallpaper" ]]; do
+  [[ -z "$wallpaper" || "$wallpaper" == \#* ]] && continue
+  encoded="${wallpaper// /%20}"
+  target="$WALLPAPER_DIR/$wallpaper"
+  if [[ -s "$target" ]]; then
+    continue
+  fi
+  if curl -fL --retry 3 --connect-timeout 10 --silent --show-error "$BASE_URL/$encoded" -o "$target"; then
+    ok "Downloaded $wallpaper"
+  else
+    rm -f "$target"
+    warn "Could not download $wallpaper; continuing without it"
+  fi
+done < "$WALLPAPER_LIST"
 
 step "Installing the wallpaper helper..."
 install -m 0755 "$ROOT/scripts/calypso-wallpaper" "$HOME/.local/bin/calypso-wallpaper"
@@ -92,6 +112,7 @@ step "Running local validation..."
 bash -n "$ROOT/scripts/install.sh"
 bash -n "$ROOT/scripts/calypso-wallpaper"
 bash -n "$ROOT/scripts/calypso-close-active"
+[[ -f "$ROOT/wallpapers/enderman-curated.txt" ]]
 jq empty "$ROOT/noctalia/palettes/CalypsoEmerald.json"
 
 if command -v luac >/dev/null 2>&1; then
