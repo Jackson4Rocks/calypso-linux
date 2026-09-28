@@ -1,38 +1,36 @@
-# Calypso Linux — Optional Hyprland Configuration
+# Calypso Linux — Material Expressive Hyprland
 
-This directory contains the **optional Hyprland configuration** maintained alongside Calypso Linux.
+This directory contains the optional Hyprland profile for Calypso Linux.
 
-KDE Plasma remains the main Calypso desktop. **Hyprland is an optional, recommended window manager** for users who prefer a tiling, keyboard-driven workflow with deeper customization.
+**KDE Plasma remains the main Calypso desktop.** This profile is for users who want a tiling, keyboard-driven Wayland workflow.
 
-The Hyprland configuration is deliberately separated from the main KDE experience so it can evolve independently.
+## Shell choice
 
-## What's included
+The profile uses **DankMaterialShell (DMS)** instead of a hand-rolled Quickshell shell.
 
-The current configuration can include:
+That choice is deliberate: DMS is a mature Quickshell-based desktop shell with native Hyprland integration and a Material 3 design system. Calypso supplies its own **Emerald Expressive** theme on top.
 
-- **Hyprland** — compositor/window manager
-- **Quickshell** — desktop shell layer used by the optional configuration
-- **Kitty** — terminal
-- **Fastfetch** — terminal system summary
-- **Zsh** — interactive shell
-- **Hyprpaper** — wallpaper handling
-- **Matugen** — wallpaper-derived colors
-- **Fuzzel** — application launcher
-- **Yazi** — terminal file manager
+The profile stays focused on a small, understandable stack:
 
-These components describe the optional Hyprland environment; they are **not the definition of the main KDE Plasma desktop**.
+- Hyprland
+- DankMaterialShell
+- Kitty
+- Yazi
+- Zsh
+- Fastfetch
+- Playerctl
+- Brightnessctl
+- Grim + Slurp + wl-clipboard
 
-## Configuration layout
+## Material 3 Expressive
 
-Hyprland configuration is stored under:
+The DMS theme lives at:
 
-    ~/.config/hypr/
+    dms/calypso-expressive.json
 
-The optional Quickshell configuration lives under:
+The design uses dark emerald surfaces, layered containers, high-contrast mint accents, and the Material 3 expressive color-scheme mode.
 
-    ~/.config/quickshell/aurora/
-
-The current profile also uses Matugen to generate wallpaper-derived theme values for the shell and supporting applications.
+The installer backs up an existing DMS settings file before selecting the Calypso theme.
 
 ## Installation
 
@@ -41,16 +39,34 @@ From the repository root:
     cd dotfiles
     bash scripts/install.sh
 
-Use this only when you want the optional Hyprland environment.
+The installer:
+
+1. installs the required Arch packages
+2. backs up existing Hyprland/DMS configuration
+3. installs the Hyprland profile
+4. installs the Calypso DMS theme
+5. installs the bundled Calypso wallpaper
+6. runs Bash, JSON and Lua checks where the required parsers exist
+7. reloads Hyprland when running inside Hyprland
+8. smoke-tests DMS IPC when a Wayland session is available
+
+To verify the profile later:
+
+    bash scripts/verify.sh
 
 ## Useful keybindings
 
 | Key | Action |
 | --- | --- |
 | **SUPER + Enter** | Open terminal |
-| **SUPER + D** | Open launcher |
-| **SUPER + E** | Open file manager |
-| **SUPER + Q** | Close window |
+| **SUPER + E** | Open Yazi in Kitty |
+| **SUPER + Space** | Open DMS launcher |
+| **SUPER + V** | Clipboard history |
+| **SUPER + N** | Notifications |
+| **SUPER + C** | Quick settings |
+| **SUPER + X** | Power menu |
+| **SUPER + ,** | DMS settings |
+| **SUPER + Shift + K** | Show keybindings |
 | **SUPER + F** | Toggle fullscreen |
 | **SUPER + Tab** | Cycle windows |
 | **SUPER + 1…0** | Switch workspace |
@@ -59,25 +75,24 @@ Use this only when you want the optional Hyprland environment.
 | **Print** | Region screenshot |
 | **SUPER + Print** | Full-screen screenshot |
 
-## Wallpaper and colors
+## Wallpaper
 
-The project uses:
+The bundled wallpaper is installed to:
 
-    calypso-wallpaper ~/Pictures/wallpapers/my-wallpaper.png
+    ~/.local/share/calypso/CALYPSO-wallpaper.webp
 
-The intended workflow is:
+Use the helper to set another image:
 
-1. choose a wallpaper
-2. generate a palette with Matugen
-3. refresh the Hyprland/Quickshell visual layer
+    calypso-wallpaper /path/to/image.webp
 
-## Relationship to the main desktop
+With no argument, it restores the bundled Calypso wallpaper.
 
-| Component | Role |
-| --- | --- |
-| KDE Plasma | Main Calypso desktop |
-| Hyprland | Optional, recommended window manager |
-| Quickshell | Optional Hyprland shell layer |
-| Calamares | Graphical system installer |
+## Stability notes
 
-The optional Hyprland configuration is not required to use KDE Plasma.
+The profile starts DMS from Hyprland itself with:
+
+    dms run -d
+
+That keeps the optional shell tied to the Hyprland session rather than enabling a global user service that could also start while you are using KDE Plasma.
+
+The installer does **not** replace or remove the KDE Plasma desktop configuration.
