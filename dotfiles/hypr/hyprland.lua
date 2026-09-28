@@ -130,28 +130,22 @@ hl.bind(main_mod .. " + W", exec(noctalia .. "panel-toggle wallpaper"), { descri
 hl.bind(main_mod .. " + X", exec(noctalia .. "panel-toggle session"), { description = "Open session menu" })
 hl.bind(main_mod .. " + COMMA", exec(noctalia .. "settings-toggle"), { description = "Open Noctalia settings" })
 
--- Workspaces: use Hyprland's native workspace dispatcher directly.
--- This avoids shell-specific workspace failures and keeps switching available
--- even when Noctalia is temporarily closed.
+-- Workspaces: use Hyprland's native dispatcher directly.
+-- This remains independent of Noctalia, so workspace switching still works
+-- when the shell is restarting or temporarily unavailable.
 for i = 1, 9 do
-  hl.bind(main_mod .. " + " .. i, hl.workspace(i), {
+  hl.bind(main_mod .. " + " .. i, exec("hyprctl dispatch workspace " .. i), {
     description = "Switch to workspace " .. i,
   })
-  hl.bind(main_mod .. " + SHIFT + " .. i, hl.dsp.window.move({
-    workspace = i,
-    follow = false,
-  }), {
+  hl.bind(main_mod .. " + SHIFT + " .. i, exec("hyprctl dispatch movetoworkspace " .. i), {
     description = "Move window to workspace " .. i,
   })
 end
 
-hl.bind(main_mod .. " + 0", hl.workspace(10), {
+hl.bind(main_mod .. " + 0", exec("hyprctl dispatch workspace 10"), {
   description = "Switch to workspace 10",
 })
-hl.bind(main_mod .. " + SHIFT + 0", hl.dsp.window.move({
-  workspace = 10,
-  follow = false,
-}), {
+hl.bind(main_mod .. " + SHIFT + 0", exec("hyprctl dispatch movetoworkspace 10"), {
   description = "Move window to workspace 10",
 })
 
