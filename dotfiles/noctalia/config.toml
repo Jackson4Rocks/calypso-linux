@@ -42,21 +42,9 @@ open_near_click_clipboard = false
 open_near_click_wallpaper = false
 open_near_click_session = false
 
-[shell.launcher]
-categories = true
-show_icons = true
-show_app_origin_indicator = false
-compact = false
-app_grid = false
-sort_by_usage = true
-pinned = ["kitty", "org.kde.dolphin"]
 
-[shell.window_switcher]
-style = "carousel"
-mru = true
-show_caption = true
-show_count = true
-show_app_icon = true
+
+
 
 [wallpaper]
 enabled = true
@@ -164,43 +152,7 @@ urgent_color = "error"
 change_color_on_hover = true
 focused_output_only = false
 
-[widget.clock]
-format = "{:%H:%M}"
-show_seconds = false
 
-[widget.active_window]
-show_icon = true
-show_title = true
-max_width = 260
-
-[widget.media]
-show_album_art = false
-show_artist = true
-show_title = true
-
-[widget.notifications]
-show_dnd = true
-
-[widget.battery]
-show_percentage = true
-
-[widget.network]
-show_icon = true
-
-[widget.volume]
-show_percentage = true
-
-[widget.tray]
-compact = true
-
-[widget.control-center]
-show_icon = true
-
-[widget.launcher]
-show_icon = true
-
-[widget.wallpaper]
-show_icon = true
 
 [desktop_widgets]
 enabled = false
