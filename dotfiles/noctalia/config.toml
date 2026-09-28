@@ -66,6 +66,68 @@ source = "custom"
 custom_palette = "CalypsoEmerald"
 pure_black_dark = false
 
+[lockscreen]
+enabled = true
+blurred_desktop = true
+transition = ["fade", "wipe", "disc"]
+transition_duration = 900
+edge_smoothness = 0.35
+blur_intensity = 0.70
+tint_intensity = 0.36
+
+[lockscreen_widgets]
+enabled = true
+schema_version = 2
+
+[lockscreen_widgets.widget.clock_main]
+type = "clock"
+output = ""
+cx = 960.0
+cy = 180.0
+box_width = 720.0
+box_height = 150.0
+rotation = 0.0
+
+[lockscreen_widgets.widget.clock_main.settings]
+clock_style = "digital"
+format = "{:%H:%M}"
+color = "on_surface"
+shadow = true
+center_text = true
+circle = false
+
+[lockscreen_widgets.widget.date_main]
+type = "label"
+output = ""
+cx = 960.0
+cy = 310.0
+box_width = 720.0
+box_height = 80.0
+rotation = 0.0
+
+[lockscreen_widgets.widget.date_main.settings]
+title = "CALYPSO LINUX"
+description = "FAST · LEAN · YOURS"
+color = "primary"
+opacity = 0.92
+shadow = true
+
+[lockscreen_widgets.widget.login_hint]
+type = "label"
+output = ""
+cx = 960.0
+cy = 425.0
+box_width = 720.0
+box_height = 70.0
+rotation = 0.0
+
+[lockscreen_widgets.widget.login_hint.settings]
+title = "Press Enter to unlock"
+description = ""
+color = "on_surface_variant"
+opacity = 0.90
+shadow = true
+
 [notification]
 enable_daemon = true
 show_app_name = true
