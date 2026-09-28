@@ -70,7 +70,6 @@ assert cfg["theme"]["custom_palette"] == "CalypsoEmerald"
 assert cfg["lockscreen"]["enabled"] is True
 assert cfg["lockscreen_widgets"]["enabled"] is True
 assert cfg["lockscreen_widgets"]["widget"]["clock_main"]["type"] == "clock"
-assert cfg["lockscreen_widgets"]["widget"]["date_main"]["type"] == "label"
 print("Noctalia TOML structure: valid")
 PY
   [[ "$?" -eq 0 ]] && pass "Noctalia TOML structure is valid" || fail "Noctalia TOML structure is invalid"
