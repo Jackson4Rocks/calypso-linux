@@ -91,6 +91,7 @@ The uninstaller stops Noctalia, restores the newest backup created by the instal
 | Key | Action |
 | --- | --- |
 | **SUPER + Enter** | Open terminal |
+| **SUPER + B** | Open Firefox |
 | **SUPER + E** | Open Yazi in Kitty |
 | **SUPER + Space** | Open Noctalia launcher |
 | **SUPER + S** | Open Control Center |
@@ -100,6 +101,7 @@ The uninstaller stops Noctalia, restores the newest backup created by the instal
 | **SUPER + ,** | Noctalia settings |
 | **ALT + Tab** | Noctalia window switcher |
 | **SUPER + F** | Toggle fullscreen |
+| **RMB + drag** | Move the active window |
 | **SUPER + Tab** | Cycle windows |
 | **SUPER + 1…0** | Switch workspace |
 | **SUPER + Shift + 1…0** | Move window to workspace |
