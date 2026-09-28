@@ -121,7 +121,7 @@ if command -v hyprctl >/dev/null 2>&1 && [[ -n "${HYPRLAND_INSTANCE_SIGNATURE:-}
   fi
 fi
 
-if [[ -n "${WAYLAND_DISPLAY:-}" ]] && command -v noctalia >/dev/null 2>&1; then
+if [[ -n "${HYPRLAND_INSTANCE_SIGNATURE:-}" ]] && command -v noctalia >/dev/null 2>&1; then
   step "Restarting Noctalia and checking its IPC..."
   pkill -x noctalia >/dev/null 2>&1 || true
   sleep 1
@@ -134,7 +134,7 @@ if [[ -n "${WAYLAND_DISPLAY:-}" ]] && command -v noctalia >/dev/null 2>&1; then
     warn "Noctalia did not stay alive; inspect /tmp/calypso-noctalia.log"
   fi
 else
-  warn "No active Wayland session; live Noctalia smoke test skipped"
+  warn "No active Hyprland session; live Noctalia smoke test skipped"
 fi
 
 printf '\n%s%sCalypso Noctalia setup is installed.%s\n' "$GREEN" "$BOLD" "$RESET"
