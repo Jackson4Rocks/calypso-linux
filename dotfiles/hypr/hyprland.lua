@@ -100,15 +100,13 @@ local function exec(command)
   return hl.dsp.exec_cmd(command)
 end
 
--- Noctalia v5 Settings is a regular Hyprland window. Do NOT use
--- hl.dsp.window.kill() directly on it: upstream issue #2699 documents
--- that killing the settings window can terminate the whole shell.
--- The safe close helper routes that window through Noctalia IPC.
-
 -- Applications and window controls.
+-- Use Hyprland's native graceful close dispatcher here. The current Hyprland
+-- Lua API exposes this as hl.dsp.window.close(), which sends a normal close
+-- request to the active client rather than killing its process.
 hl.bind(main_mod .. " + RETURN", exec(terminal), { description = "Open terminal" })
 hl.bind(main_mod .. " + E", exec(file_manager), { description = "Open file manager" })
-hl.bind(main_mod .. " + Q", exec("calypso-close-active"), { description = "Close active window safely" })
+hl.bind(main_mod .. " + Q", hl.dsp.window.close(), { description = "Close active window" })
 hl.bind(main_mod .. " + F", hl.dsp.window.fullscreen({ action = "toggle" }), { description = "Toggle fullscreen" })
 hl.bind(main_mod .. " + SHIFT + SPACE", hl.dsp.window.float({ action = "toggle" }), { description = "Toggle floating" })
 hl.bind(main_mod .. " + P", hl.dsp.window.pseudo({ action = "toggle" }), { description = "Toggle pseudotile" })
