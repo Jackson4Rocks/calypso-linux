@@ -57,6 +57,7 @@ step "Preparing a safe backup..."
 backup "$CFG/hypr/hyprland.lua"
 backup "$NOCTALIA/config.toml"
 backup "$NOCTALIA/palettes/CalypsoEmerald.json"
+backup "$NOCTALIA_STATE/settings.toml"
 ok "Backup: $BACKUP"
 
 mkdir -p   "$CFG/hypr"   "$NOCTALIA/palettes"   "$HOME/.local/bin"   "$HOME/.local/share/calypso"
@@ -83,6 +84,7 @@ fi
 
 step "Installing the wallpaper helper..."
 install -m 0755 "$ROOT/scripts/calypso-wallpaper" "$HOME/.local/bin/calypso-wallpaper"
+install -m 0755 "$ROOT/scripts/calypso-close-active" "$HOME/.local/bin/calypso-close-active"
 ok "Wallpaper helper installed"
 
 step "Running local validation..."
