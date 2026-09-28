@@ -100,11 +100,16 @@ local function exec(command)
   return hl.dsp.exec_cmd(command)
 end
 
+-- Noctalia v5 Settings is a regular Hyprland window. Do NOT use
+-- hl.dsp.window.kill() directly on it: upstream issue #2699 documents
+-- that killing the settings window can terminate the whole shell.
+-- The safe close helper routes that window through Noctalia IPC.
+
 -- Applications and window controls.
 hl.bind(main_mod .. " + RETURN", exec(terminal), { description = "Open terminal" })
 hl.bind(main_mod .. " + E", exec(file_manager), { description = "Open file manager" })
-hl.bind(main_mod .. " + Q", hl.dsp.window.kill(), { description = "Close focused window" })
-hl.bind(main_mod .. " + SHIFT + Q", hl.dsp.window.kill(), { description = "Kill focused window" })
+hl.bind(main_mod .. " + Q", exec("calypso-close-active"), { description = "Close active window safely" })
+hl.bind(main_mod .. " + SHIFT + Q", exec("calypso-close-active"), { description = "Close active window safely" })
 hl.bind(main_mod .. " + F", hl.dsp.window.fullscreen({ action = "toggle" }), { description = "Toggle fullscreen" })
 hl.bind(main_mod .. " + SHIFT + SPACE", hl.dsp.window.float({ action = "toggle" }), { description = "Toggle floating" })
 hl.bind(main_mod .. " + P", exec("hyprctl dispatch pseudo"), { description = "Toggle pseudotile" })
@@ -123,13 +128,21 @@ hl.bind("ALT + TAB", exec(noctalia .. "window-switcher"), { description = "Open 
 
 -- Noctalia panels.
 hl.bind(main_mod .. " + SPACE", exec(noctalia .. "panel-toggle launcher"), { description = "Open launcher" })
-hl.bind(main_mod .. " + C", exec(noctalia .. "panel-toggle control-center"), { description = "Open Control Center" })
+hl.bind(main_mod .. " + S", exec(noctalia .. "panel-toggle control-center"), { description = "Open Control Center" })
 hl.bind(main_mod .. " + V", exec(noctalia .. "panel-toggle clipboard"), { description = "Open clipboard history" })
 hl.bind(main_mod .. " + N", exec(noctalia .. "panel-toggle control-center notifications"), { description = "Open notifications" })
 hl.bind(main_mod .. " + W", exec(noctalia .. "panel-toggle wallpaper"), { description = "Open wallpaper picker" })
 hl.bind(main_mod .. " + X", exec(noctalia .. "panel-toggle session"), { description = "Open session menu" })
 hl.bind(main_mod .. " + COMMA", exec(noctalia .. "settings-toggle"), { description = "Open Noctalia settings" })
 
+hl.bind(main_mod .. " + L", exec(noctalia .. "session lock"), { description = "Lock session" })
+hl.bind(main_mod .. " + SHIFT + W", exec(noctalia .. "wallpaper-next"), { description = "Next wallpaper" })
+hl.bind(main_mod .. " + SHIFT + B", exec(noctalia .. "bar-toggle main"), { description = "Toggle the Calypso bar" })
+hl.bind(main_mod .. " + CTRL + S", exec(noctalia .. "panel-toggle control-center system"), { description = "Open system panel" })
+hl.bind(main_mod .. " + CTRL + Q", exec(noctalia .. "panel-toggle session"), { description = "Open session menu" })
+hl.bind(main_mod .. " + SHIFT + M", exec(noctalia .. "notification-dnd-toggle"), { description = "Toggle Do Not Disturb" })
+hl.bind(main_mod .. " + M", exec(noctalia .. "media toggle"), { description = "Toggle media playback" })
+hl.bind(main_mod .. " + SHIFT + R", exec(noctalia .. "config-reload"), { description = "Reload Noctalia configuration" })
 -- Workspaces: use Hyprland's native dispatcher directly.
 -- This remains independent of Noctalia, so workspace switching still works
 -- when the shell is restarting or temporarily unavailable.
@@ -150,10 +163,10 @@ hl.bind(main_mod .. " + SHIFT + 0", exec("hyprctl dispatch movetoworkspace 10"),
 })
 
 -- Scratchpad.
-hl.bind(main_mod .. " + S", hl.dsp.workspace.toggle_special("magic"), {
+hl.bind(main_mod .. " + T", hl.dsp.workspace.toggle_special("magic"), {
   description = "Toggle scratchpad",
 })
-hl.bind(main_mod .. " + SHIFT + S", hl.dsp.window.move({
+hl.bind(main_mod .. " + SHIFT + T", hl.dsp.window.move({
   workspace = "special:magic",
   follow = false,
 }), {

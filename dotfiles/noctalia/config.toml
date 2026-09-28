@@ -177,47 +177,47 @@ disk_poll_seconds = 10.0
 
 [bar.main]
 position = "top"
-thickness = 50
-background_opacity = 0.96
-radius = 22
-margin_ends = 180
-margin_edge = 12
-padding = 12
-widget_spacing = 7
+thickness = 46
+background_opacity = 0.82
+radius = 23
+margin_ends = 14
+margin_edge = 10
+padding = 10
+widget_spacing = 6
 scale = 1.0
 font_scale = 1.0
 shadow = true
+auto_hide = false
 reserve_space = true
-capsule = false
+capsule = true
+capsule_fill = "surface_variant"
+capsule_radius = 15
+capsule_opacity = 0.84
+capsule_border = "outline"
 
-start = ["launcher", "wallpaper", "workspaces"]
+start = ["launcher", "workspaces", "active_window"]
 center = ["clock"]
-end = ["active_window", "media", "tray", "notifications", "network", "volume", "battery", "control-center"]
+end = ["media", "network", "volume", "battery", "tray", "notifications", "control-center", "session"]
 
-[widget.workspaces]
-style = "regular"
-show_labels = true
-show_icons = false
-label_source = "id"
-max_label_chars = 2
-show_tooltip = true
-labels_only_when_occupied = false
-hide_when_empty = false
-show_all_outputs = false
-pill_scale = 1.0
-active_pill_size = 2.2
-inactive_pill_size = 1.0
-focused_color = "primary"
-occupied_color = "secondary"
-empty_color = "surface_variant"
-urgent_color = "error"
-change_color_on_hover = true
-focused_output_only = false
+[widget.clock]
+format = "{:%H:%M}"
+scale = 1.08
+font_weight = 700
 
+[widget.notifications]
+hide_when_no_unread = true
 
+[widget.network]
+show_label = true
+
+[widget.battery]
+show_percent = true
 
 [desktop_widgets]
 enabled = false
 
 [location]
 auto_locate = false
+
+[dock]
+enabled = false
