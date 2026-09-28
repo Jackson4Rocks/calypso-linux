@@ -132,13 +132,10 @@ calamares
 xdg-desktop-portal-kde
 xdg-desktop-portal-gtk
 
-# Hyprland + optional Calypso Hyprland configuration
+# Hyprland + Calypso Noctalia configuration
 hyprland
-quickshell
-hyprpaper
-matugen
-fuzzel
-yazi
+noctalia
+firefox
 jq
 xdg-desktop-portal
 xdg-desktop-portal-hyprland
@@ -157,6 +154,7 @@ wl-clipboard
 brightnessctl
 playerctl
 power-profiles-daemon
+upower
 cava
 xorg-xwayland
 git
