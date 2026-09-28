@@ -67,14 +67,13 @@ install -m 0644 "$ROOT/dms/calypso-expressive.json" "$THEME"
 
 if [[ -f "$DMS/settings.json" ]]; then
   tmp="$(mktemp)"
-  jq --arg theme "$THEME"     '.currentThemeName="calypso-expressive" | .customThemeFile=$theme | .matugenScheme="scheme-expressive"'     "$DMS/settings.json" > "$tmp" || die "Existing DMS settings.json is invalid JSON; restore from $BACKUP"
+  jq --arg theme "$THEME"     '.currentThemeName="custom" | .customThemeFile=$theme'     "$DMS/settings.json" > "$tmp" || die "Existing DMS settings.json is invalid JSON; restore from $BACKUP"
   mv "$tmp" "$DMS/settings.json"
 else
   cat > "$DMS/settings.json" <<EOF
 {
-  "currentThemeName": "calypso-expressive",
-  "customThemeFile": "$THEME",
-  "matugenScheme": "scheme-expressive"
+  "currentThemeName": "custom",
+  "customThemeFile": "$THEME"
 }
 EOF
 fi
