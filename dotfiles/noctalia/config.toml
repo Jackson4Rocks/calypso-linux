@@ -53,9 +53,9 @@ transition = ["fade", "wipe", "disc", "stripes", "zoom"]
 transition_duration = 900
 edge_smoothness = 0.25
 transition_on_startup = true
-directory = "~/Pictures/wallpapers"
-directory_dark = "~/Pictures/wallpapers"
-directory_light = "~/Pictures/wallpapers"
+directory = "~/.local/share/calypso/wallpapers"
+directory_dark = "~/.local/share/calypso/wallpapers"
+directory_light = "~/.local/share/calypso/wallpapers"
 
 [wallpaper.default]
 path = "~/.local/share/calypso/CALYPSO-wallpaper.webp"
