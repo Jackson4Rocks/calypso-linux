@@ -48,50 +48,6 @@ jobs:
         run: |
           docker run --rm             -v "$GITHUB_WORKSPACE:/repo:ro"             archlinux:latest             bash -lc '
               set -euo pipefail
-
-              pacman -Sy --noconfirm dms-shell dms-shell-hyprland weston jq
-
-              export HOME=/root
-              export XDG_RUNTIME_DIR=/tmp/xdg-runtime
-              mkdir -p "$XDG_RUNTIME_DIR"
-              chmod 700 "$XDG_RUNTIME_DIR"
-
-              mkdir -p "$HOME/.config/DankMaterialShell/themes"
-              cp /repo/dotfiles/dms/calypso-expressive.json                 "$HOME/.config/DankMaterialShell/themes/calypso-expressive.json"
-
-              cat > "$HOME/.config/DankMaterialShell/settings.json" <<EOF
-              {
-                "currentThemeName": "calypso-expressive",
-                "customThemeFile": "$HOME/.config/DankMaterialShell/themes/calypso-expressive.json",
-                "matugenScheme": "scheme-expressive"
-              }
-              EOF
-
-              export DMS_DISABLE_MATUGEN=1
-
-              dbus-run-session -- bash -lc "
-                set -euo pipefail
-                weston --backend=headless-backend.so --socket=wayland-ci --idle-time=0 >/tmp/weston.log 2>&1 &
-                weston_pid=$!
-                trap \"kill $weston_pid >/dev/null 2>&1 || true\" EXIT
-
-                for i in $(seq 1 20); do
-                  [[ -S \\"$XDG_RUNTIME_DIR/wayland-ci\\" ]] && break
-                  sleep 0.5
-                done
-
-                export WAYLAND_DISPLAY=wayland-ci
-                timeout 12s dms run >/tmp/dms.log 2>&1 || status=$?
-                status=${status:-0}
-
-                if [[ $status -eq 124 ]]; then
-                  echo \"DMS stayed alive for the smoke-test window.\"
-                  exit 0
-                fi
-
-                echo \"DMS exited with status $status\"
-                cat /tmp/dms.log
-                cat /tmp/weston.log
-                exit 1
-              "
+              pacman -Sy --noconfirm dms-shell dms-shell-hyprland weston
+              bash /repo/dotfiles/scripts/ci-dms-smoke.sh
             '
