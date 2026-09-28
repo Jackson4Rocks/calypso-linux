@@ -91,6 +91,7 @@ rotation = 0.0
 [lockscreen_widgets.widget.clock_main.settings]
 clock_style = "digital"
 format = "{:%H:%M}"
+background = false
 color = "on_surface"
 shadow = true
 center_text = true
@@ -146,7 +147,7 @@ disk_poll_seconds = 10.0
 [bar.main]
 position = "top"
 thickness = 46
-background_opacity = 0.82
+background_opacity = 0.0
 radius = 23
 margin_ends = 14
 margin_edge = 10
