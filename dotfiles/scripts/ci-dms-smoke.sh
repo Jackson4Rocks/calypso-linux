@@ -16,9 +16,8 @@ cp "$ROOT/dotfiles/dms/calypso-expressive.json"   "$XDG_CONFIG_HOME/DankMaterial
 
 cat > "$XDG_CONFIG_HOME/DankMaterialShell/settings.json" <<EOF
 {
-  "currentThemeName": "calypso-expressive",
-  "customThemeFile": "$XDG_CONFIG_HOME/DankMaterialShell/themes/calypso-expressive.json",
-  "matugenScheme": "scheme-expressive"
+  "currentThemeName": "custom",
+  "customThemeFile": "$XDG_CONFIG_HOME/DankMaterialShell/themes/calypso-expressive.json"
 }
 EOF
 
