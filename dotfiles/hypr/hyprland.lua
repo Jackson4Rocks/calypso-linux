@@ -130,7 +130,7 @@ hl.bind(main_mod .. " + X", exec("dms ipc call powermenu toggle"), { description
 hl.bind(main_mod .. " + COMMA", exec("dms ipc call settings toggle"), { description = "Open shell settings" })
 hl.bind(main_mod .. " + SHIFT + K", exec("dms ipc call keybinds toggle hyprland"), { description = "Show keybinds" })
 hl.bind(main_mod .. " + SHIFT + R", exec("hyprctl reload"), { description = "Reload Hyprland" })
-hl.bind(main_mod .. " + SHIFT + W", exec("dms ipc call wallpaper open"), { description = "Open wallpaper picker" })
+hl.bind(main_mod .. " + SHIFT + W", exec("dms ipc call file browse wallpaper"), { description = "Open wallpaper picker" })
 
 for i = 1, 9 do
   hl.bind(main_mod .. " + " .. i, exec("hyprctl dispatch workspace " .. i), {
