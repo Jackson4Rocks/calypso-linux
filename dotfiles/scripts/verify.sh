@@ -31,6 +31,11 @@ fi
 
 if command -v jq >/dev/null 2>&1; then
   jq empty "$ROOT/dms/calypso-expressive.json" && pass "DMS theme JSON parses" || fail "DMS theme JSON is invalid"
+  for mode in dark light; do
+    jq -e ".\${mode} | .primary and .primaryText and .primaryContainer and .secondary and .surface and .surfaceText and .surfaceVariant and .surfaceVariantText and .surfaceTint and .background and .backgroundText and .outline and .surfaceContainerLowest and .surfaceContainerLow and .surfaceContainer and .surfaceContainerHigh and .surfaceContainerHighest" "$ROOT/dms/calypso-expressive.json" >/dev/null \
+      && pass "Material 3 \$mode palette has all required color roles" \
+      || fail "Material 3 \$mode palette is missing a required color role"
+  done
 else
   warn "jq not installed; run 'jq empty dms/calypso-expressive.json' manually"
 fi
