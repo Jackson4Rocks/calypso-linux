@@ -6,14 +6,14 @@ This directory contains the optional Hyprland profile for Calypso Linux.
 
 ## Shell choice
 
-The profile uses **DankMaterialShell (DMS)** instead of a hand-rolled Quickshell shell.
+The profile uses **Noctalia** as the desktop shell.
 
-That choice is deliberate: DMS is a mature Quickshell-based desktop shell with native Hyprland integration and a Material 3 design system. Calypso supplies its own **Emerald Expressive** theme on top.
+Noctalia is an independent Wayland shell. Calypso only ships configuration, theming, and integration files for it; Noctalia's source is not copied into this repository.
 
-The profile stays focused on a small, understandable stack:
+The profile stays focused on a small stack:
 
 - Hyprland
-- DankMaterialShell
+- Noctalia
 - Kitty
 - Yazi
 - Zsh
@@ -24,13 +24,34 @@ The profile stays focused on a small, understandable stack:
 
 ## Material 3 Expressive
 
-The DMS theme lives at:
+Calypso ships a custom **Emerald** Noctalia palette at:
 
-    dms/calypso-expressive.json
+    noctalia/palettes/CalypsoEmerald.json
 
-The design uses dark emerald surfaces, layered containers, high-contrast mint accents, and the Material 3 expressive color-scheme mode.
+It uses Material 3-style surface roles, emerald primary/secondary accents, expressive rounded surfaces, and a dark-first visual direction.
 
-The installer backs up an existing DMS settings file before selecting the Calypso theme.
+The configuration lives at:
+
+    noctalia/config.toml
+
+The palette is selected as:
+
+    source = "custom"
+    custom_palette = "CalypsoEmerald"
+
+## Lock screen
+
+The Noctalia lock screen is configured to match the Calypso website's visual language:
+
+- dark emerald background
+- blurred/tinted wallpaper
+- large centered digital clock
+- Calypso wordmark-style title
+- subtle secondary text
+- rounded authentication UI supplied by Noctalia
+- smooth fade/wipe transitions
+
+The lock-screen widgets are declared in [lockscreen_widgets].
 
 ## Installation
 
@@ -41,14 +62,15 @@ From the repository root:
 
 The installer:
 
-1. installs the required Arch packages
-2. backs up existing Hyprland/DMS configuration
-3. installs the Hyprland profile
-4. installs the Calypso DMS theme
-5. installs the bundled Calypso wallpaper
-6. runs Bash, JSON and Lua checks where the required parsers exist
-7. reloads Hyprland when running inside Hyprland
-8. smoke-tests DMS IPC when a Wayland session is available
+1. installs the Arch packages required for the profile
+2. backs up existing Hyprland and Noctalia configuration
+3. installs the Calypso Hyprland profile
+4. installs the Calypso Material 3 palette
+5. installs the Noctalia configuration and lock screen
+6. installs the bundled Calypso wallpaper
+7. runs Bash, JSON, Lua, and Noctalia configuration validation
+8. reloads Hyprland when running inside Hyprland
+9. smoke-tests Noctalia under Wayland when a graphical session is available
 
 To verify the profile later:
 
@@ -60,20 +82,20 @@ To verify the profile later:
 | --- | --- |
 | **SUPER + Enter** | Open terminal |
 | **SUPER + E** | Open Yazi in Kitty |
-| **SUPER + Space** | Open DMS launcher |
+| **SUPER + Space** | Open Noctalia launcher |
+| **SUPER + C** | Open Control Center |
 | **SUPER + V** | Clipboard history |
-| **SUPER + N** | Notifications |
-| **SUPER + C** | Quick settings |
-| **SUPER + X** | Power menu |
-| **SUPER + ,** | DMS settings |
-| **SUPER + Shift + K** | Show keybindings |
+| **SUPER + W** | Wallpaper picker |
+| **SUPER + X** | Session menu |
+| **SUPER + ,** | Noctalia settings |
+| **ALT + Tab** | Noctalia window switcher |
 | **SUPER + F** | Toggle fullscreen |
 | **SUPER + Tab** | Cycle windows |
 | **SUPER + 1…0** | Switch workspace |
 | **SUPER + Shift + 1…0** | Move window to workspace |
 | **SUPER + Shift + R** | Reload Hyprland |
-| **Print** | Region screenshot |
-| **SUPER + Print** | Full-screen screenshot |
+| **Print** | Noctalia screenshot region |
+| **SUPER + Print** | Noctalia screenshot full screen |
 
 ## Wallpaper
 
@@ -89,10 +111,6 @@ With no argument, it restores the bundled Calypso wallpaper.
 
 ## Stability notes
 
-The profile starts DMS from Hyprland itself with:
-
-    dms run -d
-
-That keeps the optional shell tied to the Hyprland session rather than enabling a global user service that could also start while you are using KDE Plasma.
+Workspace switching is handled directly by Hyprland's native workspace dispatcher instead of depending on shell state. Noctalia is only responsible for the surrounding desktop UI.
 
 The installer does **not** replace or remove the KDE Plasma desktop configuration.
