@@ -71,10 +71,11 @@ log "Removing Calypso helper commands..."
 rm -f "$HOME/.local/bin/calypso-wallpaper" "$HOME/.local/bin/calypso-close-active"
 ok "Calypso helper commands removed"
 
-log "Removing the bundled Calypso wallpaper copy..."
+log "Removing Calypso wallpaper copies..."
 rm -f "$HOME/.local/share/calypso/CALYPSO-wallpaper.webp"
+rm -rf "$HOME/.local/share/calypso/wallpapers"
 rmdir "$HOME/.local/share/calypso" 2>/dev/null || true
-ok "Bundled Calypso wallpaper removed when present"
+ok "Calypso wallpaper copies removed when present"
 
 if [[ -d "$BACKUP_ROOT" ]]; then
   printf "\nBackups were kept at:\n  %s\n" "$BACKUP_ROOT"
