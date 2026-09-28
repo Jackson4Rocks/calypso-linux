@@ -56,6 +56,9 @@ command -v repo-add >/dev/null 2>&1 || {
   exit 1
 }
 
+echo "==> Preparing the complete Calypso desktop profile..."
+bash "${ROOT_DIR}/setup.sh" --stage-iso
+
 echo "==> Preparing custom Calamares package..."
 
 CALAMARES_PKG=""
