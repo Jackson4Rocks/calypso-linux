@@ -3,7 +3,7 @@ set -euo pipefail
 
 echo "==> Configuring Calypso Linux live environment..."
 
-install -d -m 0755 /etc/sudoers.d /etc/sddm.conf.d /usr/share/backgrounds/calypso
+install -d -m 0755 /etc/sudoers.d /etc/sddm.conf.d /usr/share/backgrounds/calypso /usr/share/calypso
 install -d -m 0755 /usr/local/bin /usr/share/applications
 install -d -m 0755 /usr/share/icons/hicolor/scalable/apps
 
@@ -69,6 +69,7 @@ Relogin=false
 EOF_SDDM
 chmod 0644 /etc/sddm.conf.d/calypso-live.conf
 
+systemctl enable calypso-wallpapers.service 2>/dev/null || true
 systemctl enable NetworkManager.service 2>/dev/null || true
 systemctl enable sddm.service 2>/dev/null || true
 systemctl enable power-profiles-daemon.service 2>/dev/null || true
