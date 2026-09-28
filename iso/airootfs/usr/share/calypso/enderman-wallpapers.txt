@@ -1,0 +1,36 @@
+# Curated from https://files.enderman.ch/wallpapers/
+# Calypso stock wallpaper collection for the Hyprland profile.
+Aurora.jpg
+Antarctic.jpg
+Autumn.png
+Blacky.jpg
+Bliss.png
+Chill Night.png
+Cloudy Mountain.jpg
+Dark Clouds.png
+Darkest Hour.jpg
+Deep Forest.jpg
+Evening Mountain.jpg
+Foggy Evening.jpg
+Foggy Island.jpg
+Foresty Mountain.jpg
+Into the Trees.jpg
+Kitty.jpg
+Milky Way 2.png
+Milky Way 3.png
+Milky Way 4.png
+Milky Way 5.png
+Nebula-2.png
+Nebula-3.jpg
+Night Mountains.png
+Northern Forest.png
+Ocean Rocks.jpg
+Peaceful River.png
+Polar Night.jpg
+Purple Sky.png
+Snowy Forest.jpg
+Snowy Spruce.jpg
+Starry Horizon.jpg
+Sunset.png
+Winter.jpg
+Yellow Moon.png
