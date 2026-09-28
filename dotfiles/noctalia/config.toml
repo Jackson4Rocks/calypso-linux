@@ -1,0 +1,209 @@
+# Calypso Linux — Noctalia v5 Material Expressive profile
+# Hand-written configuration. GUI overrides live outside this directory.
+
+[accessibility]
+ui_scale = 1.0
+high_contrast = false
+
+[shell]
+corner_radius_scale = 1.25
+font_family = "sans-serif"
+time_format = "{:%H:%M}"
+date_format = "%A, %x"
+telemetry_enabled = false
+clipboard_enabled = true
+clipboard_history_max_entries = 100
+clipboard_keep_from_closed_apps = true
+settings_show_advanced = true
+shared_gl_context = true
+
+[shell.animation]
+enabled = true
+speed = 1.0
+
+[shell.shadow]
+direction = "down"
+alpha = 0.48
+
+[shell.panel]
+transparency_mode = "soft"
+borders = true
+shadow = true
+launcher_placement = "floating"
+clipboard_placement = "floating"
+control_center_placement = "attached"
+wallpaper_placement = "floating"
+session_placement = "attached"
+launcher_position = "center"
+clipboard_position = "center"
+open_near_click_control_center = false
+open_near_click_launcher = false
+open_near_click_clipboard = false
+open_near_click_wallpaper = false
+open_near_click_session = false
+
+[shell.launcher]
+categories = true
+show_icons = true
+show_app_origin_indicator = false
+compact = false
+app_grid = false
+sort_by_usage = true
+pinned = ["kitty", "org.kde.dolphin"]
+
+[shell.window_switcher]
+style = "carousel"
+mru = true
+show_caption = true
+show_count = true
+show_app_icon = true
+
+[wallpaper]
+enabled = true
+fill_mode = "crop"
+transition = ["fade", "wipe", "disc", "stripes", "zoom"]
+transition_duration = 900
+edge_smoothness = 0.25
+transition_on_startup = true
+directory = "~/Pictures/wallpapers"
+directory_dark = "~/Pictures/wallpapers"
+directory_light = "~/Pictures/wallpapers"
+
+[wallpaper.default]
+path = "~/.local/share/calypso/CALYPSO-wallpaper.webp"
+
+[theme]
+mode = "dark"
+source = "custom"
+custom_palette = "CalypsoEmerald"
+pure_black_dark = false
+
+[notification]
+enable_daemon = true
+show_app_name = true
+show_actions = true
+layer = "top"
+background_opacity = 0.97
+offset_x = 18
+offset_y = 12
+
+[osd]
+position = "top_right"
+position_vertical = "top_center"
+orientation = "horizontal"
+scale = 1.0
+background_opacity = 0.97
+offset_x = 18
+offset_y = 12
+
+[control_center]
+sidebar = "compact"
+show_shortcut_labels = true
+
+[[control_center.shortcuts]]
+type = "wifi"
+
+[[control_center.shortcuts]]
+type = "bluetooth"
+
+[[control_center.shortcuts]]
+type = "caffeine"
+
+[[control_center.shortcuts]]
+type = "nightlight"
+
+[[control_center.shortcuts]]
+type = "dark_mode"
+
+[[control_center.shortcuts]]
+type = "session"
+
+[system.monitor]
+enabled = true
+cpu_poll_seconds = 2.0
+memory_poll_seconds = 2.0
+network_poll_seconds = 3.0
+disk_poll_seconds = 10.0
+
+[bar.main]
+position = "top"
+thickness = 50
+background_opacity = 0.96
+radius = 22
+margin_ends = 180
+margin_edge = 12
+padding = 12
+widget_spacing = 7
+scale = 1.0
+font_scale = 1.0
+shadow = true
+reserve_space = true
+capsule = false
+
+start = ["launcher", "wallpaper", "workspaces"]
+center = ["clock"]
+end = ["active_window", "media", "tray", "notifications", "network", "volume", "battery", "control-center"]
+
+[widget.workspaces]
+style = "regular"
+show_labels = true
+show_icons = false
+label_source = "id"
+max_label_chars = 2
+show_tooltip = true
+labels_only_when_occupied = false
+hide_when_empty = false
+show_all_outputs = false
+pill_scale = 1.0
+active_pill_size = 2.2
+inactive_pill_size = 1.0
+focused_color = "primary"
+occupied_color = "secondary"
+empty_color = "surface_variant"
+urgent_color = "error"
+change_color_on_hover = true
+focused_output_only = false
+
+[widget.clock]
+format = "{:%H:%M}"
+show_seconds = false
+
+[widget.active_window]
+show_icon = true
+show_title = true
+max_width = 260
+
+[widget.media]
+show_album_art = false
+show_artist = true
+show_title = true
+
+[widget.notifications]
+show_dnd = true
+
+[widget.battery]
+show_percentage = true
+
+[widget.network]
+show_icon = true
+
+[widget.volume]
+show_percentage = true
+
+[widget.tray]
+compact = true
+
+[widget.control-center]
+show_icon = true
+
+[widget.launcher]
+show_icon = true
+
+[widget.wallpaper]
+show_icon = true
+
+[desktop_widgets]
+enabled = false
+
+[location]
+auto_locate = false
