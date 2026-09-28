@@ -92,7 +92,7 @@ The uninstaller stops Noctalia, restores the newest backup created by the instal
 | --- | --- |
 | **SUPER + Enter** | Open terminal |
 | **SUPER + B** | Open Firefox |
-| **SUPER + E** | Open Yazi in Kitty |
+| **SUPER + E** | Open Dolphin |
 | **SUPER + Space** | Open Noctalia launcher |
 | **SUPER + S** | Open Control Center |
 | **SUPER + V** | Clipboard history |
@@ -111,11 +111,19 @@ The uninstaller stops Noctalia, restores the newest backup created by the instal
 
 ## Wallpaper
 
-The bundled wallpaper is installed to:
+The Calypso wallpaper collection is installed to:
+
+    ~/.local/share/calypso/wallpapers/
+
+It is curated from Enderman's public wallpaper directory and includes a mix of astronomy, forests, mountains, night skies, and darker scenic wallpapers. The collection is downloaded during installation from:
+
+    https://files.enderman.ch/wallpapers/
+
+The bundled Calypso wallpaper remains available at:
 
     ~/.local/share/calypso/CALYPSO-wallpaper.webp
 
-Use the helper to set another image:
+Use the helper to set any image:
 
     calypso-wallpaper /path/to/image.webp
 
