@@ -96,38 +96,6 @@ shadow = true
 center_text = true
 circle = false
 
-[lockscreen_widgets.widget.date_main]
-type = "label"
-output = ""
-cx = 960.0
-cy = 310.0
-box_width = 720.0
-box_height = 80.0
-rotation = 0.0
-
-[lockscreen_widgets.widget.date_main.settings]
-title = "CALYPSO LINUX"
-description = "FAST · LEAN · YOURS"
-color = "primary"
-opacity = 0.92
-shadow = true
-
-[lockscreen_widgets.widget.login_hint]
-type = "label"
-output = ""
-cx = 960.0
-cy = 425.0
-box_width = 720.0
-box_height = 70.0
-rotation = 0.0
-
-[lockscreen_widgets.widget.login_hint.settings]
-title = "Press Enter to unlock"
-description = ""
-color = "on_surface_variant"
-opacity = 0.90
-shadow = true
-
 [notification]
 enable_daemon = true
 show_app_name = true
