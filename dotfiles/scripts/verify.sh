@@ -26,6 +26,7 @@ for f in \
   "$PALETTE" \
   "$ROOT/scripts/install.sh" \
   "$ROOT/scripts/calypso-wallpaper" \
+  "$ROOT/scripts/calypso-close-active" \
   "$ROOT/scripts/ci-noctalia-smoke.sh"
 do
   if [[ -f "$f" ]]; then
@@ -38,6 +39,7 @@ done
 if command -v bash >/dev/null 2>&1; then
   bash -n "$ROOT/scripts/install.sh" && pass "install.sh parses" || fail "install.sh has a Bash syntax error"
   bash -n "$ROOT/scripts/calypso-wallpaper" && pass "calypso-wallpaper parses" || fail "calypso-wallpaper has a Bash syntax error"
+  bash -n "$ROOT/scripts/calypso-close-active" && pass "calypso-close-active parses" || fail "calypso-close-active has a Bash syntax error"
   bash -n "$ROOT/scripts/ci-noctalia-smoke.sh" && pass "Noctalia smoke test parses" || fail "Noctalia smoke test has a Bash syntax error"
 else
   warn "Bash is not installed; skipped Bash checks"
