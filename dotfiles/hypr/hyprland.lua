@@ -109,21 +109,20 @@ end
 hl.bind(main_mod .. " + RETURN", exec(terminal), { description = "Open terminal" })
 hl.bind(main_mod .. " + E", exec(file_manager), { description = "Open file manager" })
 hl.bind(main_mod .. " + Q", exec("calypso-close-active"), { description = "Close active window safely" })
-hl.bind(main_mod .. " + SHIFT + Q", exec("calypso-close-active"), { description = "Close active window safely" })
 hl.bind(main_mod .. " + F", hl.dsp.window.fullscreen({ action = "toggle" }), { description = "Toggle fullscreen" })
 hl.bind(main_mod .. " + SHIFT + SPACE", hl.dsp.window.float({ action = "toggle" }), { description = "Toggle floating" })
-hl.bind(main_mod .. " + P", exec("hyprctl dispatch pseudo"), { description = "Toggle pseudotile" })
+hl.bind(main_mod .. " + P", hl.dsp.window.pseudo({ action = "toggle" }), { description = "Toggle pseudotile" })
 
 -- Focus and movement.
-hl.bind(main_mod .. " + LEFT", exec("hyprctl dispatch movefocus l"), { description = "Focus left" })
-hl.bind(main_mod .. " + RIGHT", exec("hyprctl dispatch movefocus r"), { description = "Focus right" })
-hl.bind(main_mod .. " + UP", exec("hyprctl dispatch movefocus u"), { description = "Focus up" })
-hl.bind(main_mod .. " + DOWN", exec("hyprctl dispatch movefocus d"), { description = "Focus down" })
-hl.bind(main_mod .. " + SHIFT + LEFT", exec("hyprctl dispatch movewindow l"), { description = "Move window left" })
-hl.bind(main_mod .. " + SHIFT + RIGHT", exec("hyprctl dispatch movewindow r"), { description = "Move window right" })
-hl.bind(main_mod .. " + SHIFT + UP", exec("hyprctl dispatch movewindow u"), { description = "Move window up" })
-hl.bind(main_mod .. " + SHIFT + DOWN", exec("hyprctl dispatch movewindow d"), { description = "Move window down" })
-hl.bind(main_mod .. " + TAB", exec("hyprctl dispatch cyclenext"), { description = "Cycle windows" })
+hl.bind(main_mod .. " + LEFT", hl.dsp.focus({ direction = "l" }), { description = "Focus left" })
+hl.bind(main_mod .. " + RIGHT", hl.dsp.focus({ direction = "r" }), { description = "Focus right" })
+hl.bind(main_mod .. " + UP", hl.dsp.focus({ direction = "u" }), { description = "Focus up" })
+hl.bind(main_mod .. " + DOWN", hl.dsp.focus({ direction = "d" }), { description = "Focus down" })
+hl.bind(main_mod .. " + SHIFT + LEFT", hl.dsp.window.move({ direction = "l" }), { description = "Move window left" })
+hl.bind(main_mod .. " + SHIFT + RIGHT", hl.dsp.window.move({ direction = "r" }), { description = "Move window right" })
+hl.bind(main_mod .. " + SHIFT + UP", hl.dsp.window.move({ direction = "u" }), { description = "Move window up" })
+hl.bind(main_mod .. " + SHIFT + DOWN", hl.dsp.window.move({ direction = "d" }), { description = "Move window down" })
+hl.bind(main_mod .. " + TAB", hl.dsp.window.cycle_next(), { description = "Cycle windows" })
 hl.bind("ALT + TAB", exec(noctalia .. "window-switcher"), { description = "Open Noctalia window switcher" })
 
 -- Noctalia panels.
@@ -143,22 +142,22 @@ hl.bind(main_mod .. " + CTRL + Q", exec(noctalia .. "panel-toggle session"), { d
 hl.bind(main_mod .. " + SHIFT + M", exec(noctalia .. "notification-dnd-toggle"), { description = "Toggle Do Not Disturb" })
 hl.bind(main_mod .. " + M", exec(noctalia .. "media toggle"), { description = "Toggle media playback" })
 hl.bind(main_mod .. " + SHIFT + R", exec(noctalia .. "config-reload"), { description = "Reload Noctalia configuration" })
--- Workspaces: use Hyprland's native dispatcher directly.
--- This remains independent of Noctalia, so workspace switching still works
--- when the shell is restarting or temporarily unavailable.
+-- Workspaces use Hyprland's native Lua dispatchers directly.
+-- They remain independent of Noctalia, so workspace switching still works
+-- while the shell is restarting or temporarily unavailable.
 for i = 1, 9 do
-  hl.bind(main_mod .. " + " .. i, exec("hyprctl dispatch workspace " .. i), {
+  hl.bind(main_mod .. " + " .. i, hl.dsp.focus({ workspace = i }), {
     description = "Switch to workspace " .. i,
   })
-  hl.bind(main_mod .. " + SHIFT + " .. i, exec("hyprctl dispatch movetoworkspace " .. i), {
+  hl.bind(main_mod .. " + SHIFT + " .. i, hl.dsp.window.move({ workspace = i, follow = false }), {
     description = "Move window to workspace " .. i,
   })
 end
 
-hl.bind(main_mod .. " + 0", exec("hyprctl dispatch workspace 10"), {
+hl.bind(main_mod .. " + 0", hl.dsp.focus({ workspace = 10 }), {
   description = "Switch to workspace 10",
 })
-hl.bind(main_mod .. " + SHIFT + 0", exec("hyprctl dispatch movetoworkspace 10"), {
+hl.bind(main_mod .. " + SHIFT + 0", hl.dsp.window.move({ workspace = 10, follow = false }), {
   description = "Move window to workspace 10",
 })
 
