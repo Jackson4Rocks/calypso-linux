@@ -9,7 +9,7 @@ QtObject {
     property color primaryContainer: "#064e3b"
     property color secondary: "#a7f3d0"
     property color outline: "#426050"
-    property color onSurface: "#e8f7ef"
-    property color onSurfaceVariant: "#afc8ba"
+    property color surfaceContent: "#e8f7ef"
+    property color surfaceContentVariant: "#afc8ba"
     property color primaryContent: "#ecfff4"
 }
