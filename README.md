@@ -1,4 +1,7 @@
-# 💚 Calypso Linux
+# 💚 Calypso Linux (deprectaed)
+
+# NOTE:
+This project has been deprecated and will **NOT** be worked on for time being, the focus has shifted into the currently upcoming GlyphOS.
 
 > **Calypso Linux** is an Arch-based Linux project centered on **KDE Plasma**, with **Hyprland available as an optional, recommended window manager**.
 
