@@ -51,7 +51,7 @@ Please include useful logs and the relevant system / build details when reportin
 
 ## ⚠️ Status
 
-Calypso Linux is an **active personal project** and is still evolving. Expect changes to the desktop configuration, artwork, system defaults, and release process.
+Calypso Linux is **no longer maintained** or supported in any way.
 
 ## 👤 Maintainer
 
@@ -69,6 +69,6 @@ You can reach the project through the [Telegram group](https://t.me/CalypsoLinux
 
 ## Copyright and attribution
 
-Copyright © 2026 JacksonTech. Calypso Linux branding and project-specific materials are attributed to JacksonTech unless a file states otherwise.
+Copyright © 2026 Leon Sony. Calypso Linux branding and project-specific materials are attributed to JacksonTech unless a file states otherwise.
 
 Arch Linux, KDE Plasma, Hyprland, and other third-party components retain their respective copyrights and licenses.
