@@ -1,4 +1,4 @@
-# 💚 Calypso Linux (deprectaed)
+# 💚 Calypso Linux (deprecated)
 
 # NOTE:
 This project has been deprecated and will **NOT** be worked on for time being, the focus has shifted into the currently upcoming GlyphOS.
