@@ -69,6 +69,6 @@ You can reach the project through the [Telegram group](https://t.me/CalypsoLinux
 
 ## Copyright and attribution
 
-Copyright © 2026 Leon Sony. Calypso Linux branding and project-specific materials are attributed to JacksonTech unless a file states otherwise.
+Copyright © 2026 Leon Sony. Calypso Linux branding and project-specific materials are attributed to Leon Sony unless a file states otherwise.
 
 Arch Linux, KDE Plasma, Hyprland, and other third-party components retain their respective copyrights and licenses.
